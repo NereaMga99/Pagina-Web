@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Meta palabras clave -->
+<meta name="keywords" content="tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium">
+
+<!-- Meta descripción optimizada -->
+<meta name="description" content="Jessica Medium ofrece sesiones de tarot, mediumnidad y guía espiritual para conectar con seres queridos fallecidos, 
+obtener orientación psíquica y encontrar claridad en tu camino.">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- libreria AOS para animaciones --> 
+    <title>Sobre Mi</title>
+    <link rel="icon" href="imagenes/favicon-32x32.png" type="image/png"> <!-- FAVICON -->
+</head>
+
+<body>
+<header>
+    <div class="logo-title">
+    <img src="imagenes/logo2.JPG" alt="Logo de Jessica Medium" class="logo" />
+    </div>
+
+    <!-- Botón hamburguesa a la derecha -->
+<button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu" aria-label="Menú principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
+            <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
+            <li><a href="sobreMi.html">Sobre mí</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- primera seccion con su foto y texto -->
+<main class="container-page-sobreMi">
+<section data-aos="fade-up" class="card-sobreMi">
+    <img src="imagenes/sobreMi.jpg" alt="sobre mi">
+    <div class="text">
+        <h1>¿Quién soy?</h1>
+        <p>Bienvenidos, soy Jessica, Tarotista y médium. <br>
+            Desde hace muchos años el tarot ha formado parte de mi vida. Con el paso de el tiempo, el Tarot se ha convertido en una verdadera pasión y en una 
+            herramienta de luz que me permite acompañar y guiar a quienes buscan respuestas o claridad en sus caminos. <br>
+            Para mí, el tarot es mucho más que un mazo de cartas, es una guía para la toma de decisiones y una forma de ver lo que muchas veces permanece oculto a nuestra vista.</p>
+        <p>La mediumnidad también ocupa un lugar muy especial en mi corazón. Me siento profundamente agradecida por poder servir de canal entre este plano y el mundo espiritual, 
+            ayudando a sanar corazones y dar mensajes  de esos seres queridos que ya no están físicamente con nosotros pero que siguen acompañándonos de una forma diferente. </p>
+        <p>Mis sesiones de mediumnidad son evidenciales y busco entregar mensajes claros y concretos que traigan paz y consuelo. Siempre trabajo desde el respeto, el amor y 
+            la sensibilidad que este acto se merece.</p>
+        <p>Gracias por estar aquí. <br> Es un honor poder acompañarte en este camino. ✨ </p>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+<p>
+    <ul class="footer-menu">
+        <li> © 2025, <a href= "index.html">Jessica Médium 2025.</a></li>
+        <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
+        <li><a href="avisoLegal.html">Aviso legal</a></li>
+    </ul>
+</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<!-- Redes sociales -->
+<div class="social-icons">
+    <a href="https://www.instagram.com/jesica.medium?igsh=MXhhbHhkNWFha2p5bg%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+    <a href="https://www.tiktok.com/@jesica_medium?_t=ZN-8xMqdUBLHNu&_r=1" target="_blank" aria-label="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+    </a>
+    <a href="https://wa.me/34696539122" target="_blank" aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</div>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-menu ul li a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+      this.classList.add('active'); // activa el clicado
+      navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+    });
+  });
+</script>
+
+</body>
+</html>

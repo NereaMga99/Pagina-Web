@@ -1,0 +1,1078 @@
+/* --- ESTILOS GENERALES --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: white;
+    color: #1a1a1a;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+nav {
+    margin: auto;
+    width: fit-content;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style-type: none;
+    font-size: 17.6px;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s ease;
+}
+
+nav ul li:hover {
+    border-bottom: 1px solid black;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* LOGO */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover,
+.logo:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* --- CABECERA CON IMAGEN --- */
+section.cabecera {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(248, 241, 241, 0.249);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.overlay p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+/* --- SECCIÓN CONTAINER-PAGE --- */
+.container-page {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente la tarjeta */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.container-page .card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    gap: 24px;
+    box-sizing: border-box; /* Importante para que padding no rompa el ancho */
+}
+
+.container-page .card img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.container-page .card .text {
+    width: 50%;
+    margin-left: 0; /* Elimina desplazamiento */
+    text-align: left;
+}
+
+/* ESTILO DE .CONTAINER-PAGE */
+.container-page main section {
+    display: flex;
+    align-items: center;
+    background-color: white; /* card background */
+    border-radius: 0.75rem; /* subtle rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    padding: 20px;
+    width: 100%;
+    max-width: 800px; 
+    gap: 24px; /* space between image and text */
+}
+
+.container-page main section img {
+  width: 50%; /* Ancho de la imagen */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.container-page main section .text {
+    margin-left: 20px; /* Espacio entre la imagen y el texto */
+    width: 50%; /* Ancho del texto */
+}
+
+.container-page .card .text h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.container-page .card .text p {
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* --- BOTÓN CONTACTAME  --- */
+.container-page a {
+    background-color: #1e40af;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 80px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.container-page a:hover {
+    background-color: #2563eb;
+}
+
+  /* LECTURAS DE TAROT DE INICIO */
+.cartas [data-aos] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cartas [data-aos] img {
+    margin-top: 0; 
+    margin-bottom: 20px; /* Puedes mantener esto para el texto de abajo */
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.cartas h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px; /* Antes: auto */
+    padding-top: 50px;
+    padding-bottom: 5px; /* O 10px como mucho */
+    font-weight: 600;
+    color: #5d3a3a;
+}
+
+.cartas p {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* SESIONES MEDIUM DE INICIO */
+.sesiones [data-aos] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    margin-top: 0; /* Espacio entre la imagen y el texto */
+    text-align: center;
+
+}
+
+.sesiones [data-aos] img {
+    margin-top: 0; 
+    margin-bottom: 20px; /* Puedes mantener esto para el texto de abajo */
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.sesiones h1 {
+    text-align: center;
+    color: #5d3a3a;
+    font-size: 30px;
+    margin-bottom: 5px; /* Antes: auto */
+    padding-top: 20px;
+    padding-bottom: 5px; /* O 10px como mucho */
+    font-weight: 600;
+}
+
+.sesiones p {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* SECCION LECTURAS DE TAROT */
+/* container-page3 */
+.container-page3 {
+    background-color: #fcf0da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-tarot {
+    display: flex;
+    flex-direction: row; /* Acomoda imagen a la izquierda y texto a la derecha */
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.card-tarot img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-tarot .text2 {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container-page3 h2 {
+    font-size: 2rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Cuarta sección */
+.cuarta-seccion {
+    background-color: #f5e9c3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px; /* Misma separación */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-tarot-2 {
+    display: flex;
+    flex-direction: row-reverse; /* Acomoda imagen a la izquierda y texto a la derecha */
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.card-tarot-2 img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-tarot-2 .text {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Estilos tipográficos */
+.container-page3 h1 {
+    font-size: 2.5rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.container-page3 p, li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.container-page3 ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.container-page3 li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.container-page3 li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.cuarta-seccion h2 {
+    font-size: 1.8rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.cuarta-seccion p, li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.cuarta-seccion ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.cuarta-seccion li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.cuarta-seccion li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+} 
+
+/* SECCION SESIONES MEDIUM */
+
+/* estilos de .container-page2 */
+.container-page2 {
+    background-color: #fcf0da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    flex-direction: row; /* Acomoda imagen a la izquierda y texto a la derecha */
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.card img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card .text {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container-page2 h2 {
+    font-size: 2rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Segunda sección */
+.segunda-seccion {
+    background-color: #f5e9c3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px; /* Misma separación */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: row-reverse; /* Acomoda imagen a la izquierda y texto a la derecha */
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.card2 img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card2 .text {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Estilos tipográficos */
+.container-page2 h1 {
+    font-size: 2.5rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.container-page2 p, li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.container-page2 ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.container-page2 li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.container-page2 li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.segunda-seccion h2 {
+    font-size: 1.8rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.segunda-seccion p, li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.segunda-seccion ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.segunda-seccion li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.segunda-seccion li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* SECCION SOBRE MI */
+
+/* container-page */
+.container-page-sobreMi {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente la tarjeta */
+    padding: 20px;
+    margin-top: 20px;
+    margin-top: 0;
+    padding-top: 0; /* Espacio superior para el header */
+    padding-bottom: 50px; /* Espacio inferior para el footer */
+}
+
+.container-page-sobreMi .card-sobreMi {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 20px rgba(179, 163, 73, 0.4);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    gap: 24px;
+    box-sizing: border-box; /* Importante para que padding no rompa el ancho */
+}
+
+.container-page-sobreMi .card-sobreMi img {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.container-page-sobreMi .card-sobreMi .text {
+    width: 60%;
+    margin-left: 0; /* Elimina desplazamiento */
+    text-align: left;
+}
+
+/* Este es el estilo del .container-page */
+.container-page-sobreMi main section {
+    display: flex;
+    align-items: center;
+    background-color: white; /* card background */
+    border-radius: 0.75rem; /* subtle rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    padding: 20px;
+    width: 100%;
+    max-width: 800px; 
+    gap: 24px; /* space between image and text */
+}
+
+.container-page-sobreMi main section img {
+  width: 50%; /* Ancho de la imagen */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.container-page-sobreMi main section .text {
+    margin-left: 20px; /* Espacio entre la imagen y el texto */
+    width: 50%; /* Ancho del texto */
+}
+
+.container-page-sobreMi .card-sobreMi .text h1 {
+    font-size: 2.5rem;
+    color: #b3a349;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.container-page-sobreMi .card-sobreMi .text p {
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* POLITICAS DE PRIVACIDAD/ AVISO LEGAL */
+.container3 {
+    width: 800px;
+    margin: auto;
+    padding: 5px 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-bottom: 80px;
+}
+
+.container3 h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.container3 h2 {
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.container3 p {
+    margin-bottom: 15px;
+}
+
+.container3 ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.container3 ul li {
+    margin-bottom: 10px;
+}
+
+.container3 a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.container3 a:hover {
+    text-decoration: underline;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN DE POLÍTICAS DE PRIVACIDAD Y AVISO LEGAL --- */
+.container3 {
+    width: 95%;
+    max-width: 600px;
+    margin: 20px auto 60px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.container3 h1 {
+    font-size: 1.5em;
+    margin: 16px 0;
+}
+
+.container3 h2 {
+    font-size: 1.4em;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.container3 p,
+.container3 ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container3 ul {
+    padding-left: 13px;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: white;
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 13px;
+    margin-bottom: auto;
+    font-size: 13px;
+}
+
+.footer-menu li {
+    position: relative;
+    display: inline-block;
+    padding-left: 12px; /* espacio para el símbolo */
+    margin-right: 15px; /* separación entre items */
+    font-size: 14px; 
+    line-height: 1.5;
+}
+
+.footer-menu li:before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: #1e40af;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* --- REDES SOCIALES --- */
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
+    padding: 6px;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* PARA OCULTAR EN PC EL MENU HAMBURGUESA */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #f5e1b5; /* Color similar al fondo de tu imagen */
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    border-top: 1px solid #ccc;
+}
+
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.hamburger {
+    display: block;
+}
+
+.container-page {
+    padding: 10px;
+}
+
+.container-page .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-page .card img {
+    width: 100%;
+    border-radius: 12px;
+    filter: brightness(1.15);
+}
+
+.container-page .card .text {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+.container-page .card .text h1 {
+    font-size: 22px;
+}
+
+.container-page .card .text p {
+    font-size: 16px;
+}
+
+/* Botón de contacto */
+.container-page a {
+    display: inline-block;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #1e40af;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.container-page a:hover {
+    background-color: #2563eb;
+    align-items: center;
+}
+
+/* Index - SECCION LECTURAS DE TAROT */
+.cartas [data-aos] {
+    padding: 30px 24px;
+}
+
+.cartas [data-aos] img {
+    max-width: 70%;
+    margin-bottom: 16px;
+}
+
+.cartas h1 {
+    font-size: 24px;
+    padding-top: 16px;
+    padding-bottom: 4px;
+}
+
+.cartas p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Index - SECCION SESIONES MEDIUMNIDAD */
+    .sesiones [data-aos] {
+    padding: 30px 24px;
+}
+
+.sesiones [data-aos] img {
+    max-width: 70%;
+    margin-bottom: 16px;
+}
+
+.sesiones h1 {
+    font-size: 24px;
+    padding-top: 16px;
+    padding-bottom: 4px;
+}
+
+.sesiones p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* LECTURAS TAROT */
+.card-tarot {
+    flex-direction: column; /* Cambia de horizontal a vertical */
+    gap: 24px;
+    padding: 20px 16px;
+}
+
+.card-tarot img {
+    width: 80%;
+    max-width: 300px;
+}
+
+.card-tarot .text2 {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.container-page3 h2 {
+    font-size: 1.5rem;
+}
+
+/* CUARTA SECCIÓN */
+.card-tarot-2 {
+    flex-direction: column; /* En móviles, imagen encima del texto */
+    gap: 24px;
+    padding: 20px 16px;
+}
+
+.card-tarot-2 img {
+    width: 80%;
+    max-width: 300px;
+}
+
+.card-tarot-2 .text {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.cuarta-seccion {
+    gap: 40px;
+    padding: 24px 12px;
+}
+
+/* SESIONES MEDIUM */
+.card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 16px;
+}
+
+.card img {
+    width: 80%;
+    max-width: 300px;
+}
+
+.card .text {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+/* CONTAINER-PAGE2 */
+.container-page2 {
+    gap: 40px;
+    padding: 24px 12px;
+}
+
+.container-page2 h2 {
+    font-size: 1.5rem;
+}
+
+.card2 {
+flex-direction: column;
+    gap: 24px;
+    padding: 20px 16px;
+}
+
+.card2 img {
+    width: 80%;
+    max-width: 300px;
+}
+
+.card2 .text {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.segunda-seccion {
+    gap: 40px;
+    padding: 24px 12px;
+}
+
+/* SOBRE MI */
+.container-page-sobreMi .card-sobreMi {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.container-page-sobreMi .card-sobreMi img {
+    width: 80%;
+    max-width: 280px;
+}
+
+.container-page-sobreMi .card-sobreMi .text {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.container-page-sobreMi {
+    padding: 20px 12px 40px;
+}
+
+/* SOCIAL-ICONS */
+.social-icons {
+    position: fixed;
+    bottom: 16px;
+    right: 16px; /* seguimos alineados a la derecha */
+    flex-direction: column; /* en línea vertical */
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-icons a img {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+}
+
+/* FOOTER */
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    padding-bottom: 8px;
+}
+
+.footer-menu li {
+    white-space: nowrap;
+    padding-left: 18px;
+    position: relative;
+    font-size: 13px;
+}
+
+.footer-menu li:before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: #1e40af;
+}
+}
+
+
+

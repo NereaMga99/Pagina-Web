@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Meta palabras clave -->
+<meta name="keywords" content="tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium">
+
+<!-- Meta descripción optimizada -->
+<meta name="description" content="Jessica Medium ofrece sesiones de tarot, mediumnidad y guía espiritual para conectar con seres queridos fallecidos, 
+obtener orientación psíquica y encontrar claridad en tu camino.">
+
+    <title>Lecturas Tarot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="imagenes/favicon-32x32.png" type="image/png"> <!-- FAVICON -->
+    </head>
+
+    <body>
+<header>
+    <div class="logo-title">
+    <img src="imagenes/logo2.JPG" alt="Logo de Jessica Medium" class="logo" />
+    </div>
+
+    <!-- Botón hamburguesa a la derecha -->
+ <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu" aria-label="Menú principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
+            <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
+            <li><a href="sobreMi.html">Sobre mí</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="container-page3">
+    <section data-aos="fade-up" class="card-tarot">
+        <img src="imagenes/sesionestarot.jpg" alt="Sesión Tarot" />
+        <div class="text2">
+        <h1>Lectura de Tarot</h1>
+            <p>¿Hay algo que te preocupa o te genera dudas?</p>
+            <p>El tarot es una herramienta poderosa que puede ayudarte a tomar decisiones con mayor claridad.</p>
+            <p>Mis lecturas no se limitan a un simple “sí” o “no”; te entrego un mensaje completo y detallado, con explicaciones claras y directas, basadas en lo que los arcanos quieran revelarte.</p>
+        <h2>Precios</h2>
+            <ul>
+                <li>1 pregunta: 5 euros.</li>
+                <li>2 preguntas: 8 euros.</li>
+                <li>3 preguntas: 12 euros.</li>
+                <li>4 preguntas: 15 euros.</li>
+            </ul>
+        </div>
+    </section>
+    </main>
+
+    <div class="cuarta-seccion">
+        <section data-aos="fade-up" class="card-tarot-2">
+            <img src="imagenes/sesionesTarot2.jpg" alt="Sesión 2" />
+            <div class="text">
+            <h2>Importante tener en cuenta antes de tu lectura:</h2>
+            <ul>
+                <li>No hago tiradas generales, sino que respondo preguntas concretas.</li>
+                <li>Realizo la lectura y te la envío en un audio de voz, acompañado de una foto de la tirada.</li>
+                <li>Elección del ser querido: puedes expresar con qué persona fallecida te gustaría contactar, pero es importante saber que no siempre se presenta quien esperamos. En el otro plano, ellos deciden cuándo y cómo comunicarse; los médiums somos solo el canal entre ambos mundos.</li>
+                <li>No hay una hora fija: recibirás tu lectura a lo largo del día, con todo el cuidado y la dedicación que mereces.</li>
+            </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <ul class="footer-menu">
+            <li>© 2025, <a href="index.html">Jessica Médium 2025.</a></li>
+            <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
+            <li><a href="avisoLegal.html">Aviso legal</a></li>
+        </ul>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Redes sociales -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/jesica.medium" target="_blank" aria-label="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/@jesica_medium" target="_blank" aria-label="TikTok">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+        </a>
+        <a href="https://wa.me/34696539122" target="_blank" aria-label="WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        </a>
+    </div>
+
+    <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-menu ul li a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+      this.classList.add('active'); // activa el clicado
+      navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+    });
+  });
+</script>
+
+</body>
+</html>

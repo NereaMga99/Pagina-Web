@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Meta palabras clave -->
+<meta name="keywords" content="tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium">
+
+<!-- Meta descripción optimizada -->
+<meta name="description" content="Jessica Medium ofrece sesiones de tarot, mediumnidad y guía espiritual para conectar con seres queridos fallecidos, 
+obtener orientación psíquica y encontrar claridad en tu camino.">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- libreria AOS para animaciones --> 
+    <title>Politica de Privacidad</title>
+    <link rel="icon" href="imagenes/favicon-32x32.png" type="image/png"> <!-- FAVICON -->
+</head>
+
+<body>
+<header>
+    <div class="logo-title">
+    <img src="imagenes/logo2.JPG" alt="Logo de Jessica Medium" class="logo" />
+    </div>
+
+    <!-- Botón hamburguesa a la derecha -->
+ <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu" aria-label="Menú principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
+            <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
+            <li><a href="sobreMi.html">Sobre mí</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container3">
+<h1>Política de Privacidad</h1>
+
+    <p>En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (Reglamento General de Protección de Datos o RGPD), 
+        y de la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), 
+        informamos a los usuarios que este sitio web no recoge datos personales de manera directa.</p>
+
+    <h2>Responsable del tratamiento</h2>
+        <ul>
+            <li><strong>Nombre:</strong> Jessica Magaña Arcos</li>
+            <li><strong>Dirección:</strong> C/ Juan de la Encina, n8/ 1-3. Almería, España</li>
+            <li><strong>Email:</strong> Jmaganarcos@gmail.com</li>
+        </ul>
+
+    <h2>Finalidad del tratamiento</h2>
+        <p>Informar sobre los servicios ofrecidos así como sus precios.</p>
+
+    <h2>Base legal</h2>
+        <p>La base legal para el tratamiento de los datos es el consentimiento del interesado al iniciar el contacto a través de WhatsApp.</p>
+
+    <h2>Destinatarios de los datos</h2>
+        <p>Los datos no serán cedidos a terceros, salvo obligación legal. No se almacenan en bases de datos externas. El intercambio de mensajes se realiza a través de WhatsApp, 
+            una plataforma externa propiedad de Meta Platforms, Inc., por lo que pueden producirse transferencias internacionales de datos.</p>
+
+    <h2>Enlaces externos</h2>
+        <p>Este sitio web puede contener enlaces a sitios de terceros (por ejemplo, Instagram y Tiktok). 
+            No tenemos control sobre sus políticas de privacidad y no nos hacemos responsables del uso que dichos sitios hagan de los datos personales del usuario. 
+            Se recomienda revisar sus respectivas políticas.</p>
+
+    <h2>Modificaciones</h2>
+        <p>El responsable se reserva el derecho de modificar la presente política para adaptarla a novedades legislativas o jurisprudenciales.</p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <ul class="footer-menu">
+        <li>© 2025, <a href="index.html">Jessica Médium 2025.</a></li>
+        <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
+        <li><a href="avisoLegal.html">Aviso legal</a></li>
+    </ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-menu ul li a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+      this.classList.add('active'); // activa el clicado
+      navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+    });
+  });
+</script>
+
+</body>
+</html>
