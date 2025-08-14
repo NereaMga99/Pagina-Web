@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSSZGRB6CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSSZGRB6CC');
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Meta palabras clave -->
+<meta name="keywords" content="tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium">
+
+<!-- Meta descripción optimizada -->
+<meta name="description" content="Jessica Medium ofrece sesiones de tarot, mediumnidad y guía espiritual para conectar con seres queridos fallecidos, 
+obtener orientación psíquica y encontrar claridad en tu camino.">
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <title>Jessica Medium</title>
+    <link rel="icon" href="imagenes/favicon-32x32.png" type="image/png"> <!-- FAVICON -->
+</head>
+
+<body>
+<header>
+    <div class="logo-title">
+    <a href="index.html">
+        <img src="imagenes/logo2.JPG" alt="Logo de Jessica Medium" class="logo" />
+    </a>
+    </div>
+
+    <!-- Botón hamburguesa a la derecha -->
+<button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu" aria-label="Menú principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
+            <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
+            <li><a href="limpiezasEnergeticas.html">Limpiezas energéticas</a></li>
+            <li><a href="rituales.html">Rituales</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="sobreMi.html">Sobre mí</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="content-page-rituales"> 
+        <h2 class="main-title">RITUALES</h2>
+
+        <div class="container-rituales mb-20"> 
+        
+            <article class="box-ritual1"> 
+                <a href="tiposRituales.html">
+                    <img src="imagenes/rituales.jpg" alt="Rituales">
+                </a>
+                <div class="text-rituales">
+                    <h2>RITUALES DE TODO TIPO</h2>
+                    <p>40-100€</p></br>
+                    <p>Trabajos de amor, endulzamientos, trabajo, estudios, salud, amistad.</p>
+                </div>
+            </article>
+
+        <article class="box1">
+        <a href="botellitasEnergeticas.html">
+            <img src="imagenes/botellita.jpg" alt="Botellitas Energéticas">
+        </a>
+        <div class="text-rituales">
+            <h2>BOTELLITAS ENERGÉTICAS</h2>
+            <p>1 Botellita -> 40€</p>
+            <p>2 Botellitas -> 60€</p></br>
+            <p>Amuleto creado a mano, de forma cuidadosa y completamente personalizada según tu energía y lo que estés buscando para ti.</p>
+        </div>
+    </article>
+  </section>
+</main>
+
+  <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #fff4e5; padding: 15px; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 1000;">
+    <span style="font-size: 1rem; color: #5d3a3a;">
+      Utilizamos cookies para mejorar tu experiencia. Al aceptar, permites el uso de Google Analytics.
+    </span>
+    <button onclick="acceptCookies()" style="margin-left: 15px; padding: 8px 16px; background-color: #d4af37; border: none; color: white; border-radius: 5px; cursor: pointer;">
+      Aceptar
+    </button>
+  </div>
+
+
+<footer>
+<ul class="footer-menu">
+    <li>© 2025, <a href="index.html">Jessica Médium 2025.</a></li>
+    <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
+    <li><a href="avisoLegal.html">Aviso legal</a></li>
+    <li><a href="cookies.html">Politica de Cookies</a></li>
+</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<!-- Redes sociales -->
+<div class="social-icons">
+    <a href="https://www.instagram.com/jesica.medium" target="_blank" aria-label="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@jesica_medium" target="_blank" aria-label="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+    </a>
+    <a href="https://wa.me/34696539122" target="_blank" aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+</div>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+navMenu.classList.toggle('active');
+});
+</script>
+
+  <script>
+    window.onload = function() {
+      if (localStorage.getItem("cookiesAccepted") === "true") {
+        document.getElementById("cookie-banner").style.display = "none";
+      }
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("cookiesAccepted", "true");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

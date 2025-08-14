@@ -108,7 +108,7 @@ section .overlay {
 /* --- SECCIÓN CONTAINER-PAGE --- */
 .container-page {
     display: flex;
-    justify-content: center; /* Centra horizontalmente la tarjeta */
+    justify-content: center; 
     padding: 20px;
     margin-top: 20px;
 }
@@ -123,7 +123,7 @@ section .overlay {
     width: 100%;
     max-width: 800px;
     gap: 24px;
-    box-sizing: border-box; /* Importante para que padding no rompa el ancho */
+    box-sizing: border-box; 
 }
 
 .container-page .card img {
@@ -135,7 +135,7 @@ section .overlay {
 
 .container-page .card .text {
     width: 50%;
-    margin-left: 0; /* Elimina desplazamiento */
+    margin-left: 0; 
     text-align: left;
 }
 
@@ -143,24 +143,24 @@ section .overlay {
 .container-page main section {
     display: flex;
     align-items: center;
-    background-color: white; /* card background */
-    border-radius: 0.75rem; /* subtle rounded corners */
+    background-color: white; 
+    border-radius: 0.75rem; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
     padding: 20px;
     width: 100%;
     max-width: 800px; 
-    gap: 24px; /* space between image and text */
+    gap: 24px; 
 }
 
 .container-page main section img {
-  width: 50%; /* Ancho de la imagen */
-  height: auto; /* Mantiene la proporción */
-  border-radius: 8px; /* Bordes redondeados para la imagen */
+  width: 50%; 
+  height: auto; 
+  border-radius: 8px; 
 }
 
 .container-page main section .text {
-    margin-left: 20px; /* Espacio entre la imagen y el texto */
-    width: 50%; /* Ancho del texto */
+    margin-left: 20px;
+    width: 50%; 
 }
 
 .container-page .card .text h1 {
@@ -190,83 +190,86 @@ section .overlay {
     background-color: #2563eb;
 }
 
-  /* LECTURAS DE TAROT DE INICIO */
-.cartas [data-aos] {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
+  /* 4 SECCIONES DEL INICIO */
+/* Contenedor general */
+.servicios-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    text-align: center;
 }
 
-.cartas [data-aos] img {
-    margin-top: 0; 
-    margin-bottom: 20px; /* Puedes mantener esto para el texto de abajo */
-    max-width: 40%;
-    height: auto;
-    border-radius: 8px;
+/* Cada fila con dos columnas */
+.servicios-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 80px; 
+    padding: 40px 20px;
 }
 
-.cartas h1 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 5px; /* Antes: auto */
-    padding-top: 50px;
-    padding-bottom: 5px; /* O 10px como mucho */
-    font-weight: 600;
-    color: #5d3a3a;
+/* Bloque de columna */
+.servicios-grid {
+    display: flex;               
 }
 
-.cartas p {
-    text-align: center;
-    font-size: 17px;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-/* SESIONES MEDIUM DE INICIO */
-.sesiones [data-aos] {
+/* Tarjeta interior (cartas, sesiones, limpiezas, rituales) */
+.servicios-grid > div {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 60px;
-    margin-top: 0; /* Espacio entre la imagen y el texto */
-    text-align: center;
-
+    width: 100%;
 }
 
-.sesiones [data-aos] img {
-    margin-top: 0; 
-    margin-bottom: 20px; /* Puedes mantener esto para el texto de abajo */
-    max-width: 40%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.sesiones h1 {
-    text-align: center;
+/* Títulos */
+.servicios-grid h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 28px 0;
+    text-align: center; 
     color: #5d3a3a;
-    font-size: 30px;
-    margin-bottom: 5px; /* Antes: auto */
-    padding-top: 20px;
-    padding-bottom: 5px; /* O 10px como mucho */
-    font-weight: 600;
 }
 
-.sesiones p {
-    text-align: center;
-    font-size: 17px;
+/* Contenido de la tarjeta (service-item, service-item2, etc.) */
+.servicios-grid [class^="service-item"] {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;                     
+}
+
+/* Imagen con mismo tamaño en todas las tarjetas */
+.servicios-grid [class^="service-item"] a {
+    display: block;
+}
+
+.servicios-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;     
+    object-fit: cover;
+    object-position:  top;
+    border-radius: 12px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.servicios-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* Texto */
+.servicios-grid p {
+    font-size: 1rem;
     line-height: 1.6;
-    font-weight: 300;
+    color: #404040;
+    margin: 0;
+}
+
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
 }
 
 /* SECCION LECTURAS DE TAROT */
+
 /* container-page3 */
 .container-page3 {
     background-color: #fcf0da;
@@ -281,13 +284,13 @@ section .overlay {
 
 .card-tarot {
     display: flex;
-    flex-direction: row; /* Acomoda imagen a la izquierda y texto a la derecha */
+    flex-direction: row; 
     max-width: 1200px;
     width: 100%;
     gap: 40px;
     padding: 30px 10px;
     box-sizing: border-box;
-    align-items: center; /* Centra verticalmente el contenido */
+    align-items: center; 
 }
 
 .card-tarot img {
@@ -318,20 +321,20 @@ section .overlay {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    padding: 30px 10px; /* Misma separación */
+    padding: 30px 10px; 
     width: 100%;
     box-sizing: border-box;
 }
 
 .card-tarot-2 {
     display: flex;
-    flex-direction: row-reverse; /* Acomoda imagen a la izquierda y texto a la derecha */
+    flex-direction: row-reverse; 
     max-width: 1200px;
     width: 100%;
     gap: 40px;
     padding: 30px 10px;
     box-sizing: border-box;
-    align-items: center; /* Centra verticalmente el contenido */
+    align-items: center; 
 }
 
 .card-tarot-2 img {
@@ -434,7 +437,7 @@ section .overlay {
     gap: 40px;
     padding: 30px 10px;
     box-sizing: border-box;
-    align-items: center; /* Centra verticalmente el contenido */
+    align-items: center;
 }
 
 .card img {
@@ -465,20 +468,20 @@ section .overlay {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    padding: 30px 10px; /* Misma separación */
+    padding: 30px 10px; 
     width: 100%;
     box-sizing: border-box;
 }
 
 .card2 {
     display: flex;
-    flex-direction: row-reverse; /* Acomoda imagen a la izquierda y texto a la derecha */
+    flex-direction: row-reverse; 
     max-width: 1200px;
     width: 100%;
     gap: 40px;
     padding: 30px 10px;
     box-sizing: border-box;
-    align-items: center; /* Centra verticalmente el contenido */
+    align-items: center; 
 }
 
 .card2 img {
@@ -559,12 +562,472 @@ section .overlay {
     top: -5px;
 }
 
+/* SECCION LIMPIEZAS ENERGETICAS */
+
+.content-page-limpiezas {
+    padding: 20px;
+    background-color: #fffef8;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #6b3e26;
+    margin: 50px 10px;
+}
+
+/* Contenedor de artículos */
+.container-limpiezas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+/* Espaciado adicional opcional */
+.mb-20 {
+    margin-bottom: 35px;
+}
+
+/* Estilo común para todos los artículos */
+.box,
+.box1,
+.box2,
+.box3,
+.box4 {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    flex: 1 1 280px;
+}
+
+.box:hover,
+.box1:hover,
+.box2:hover,
+.box3:hover,
+.box4:hover {
+    transform: translateY(-5px);
+}
+
+/* Imágenes */
+.box img,
+.box1 img,
+.box2 img,
+.box3 img,
+.box4 img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Texto dentro de cada tarjeta */
+.text-limpiezas {
+    padding: 20px;
+    text-align: center;
+}
+
+.text-limpiezas h2 {
+    font-size: 1.3rem;
+    color: #402218;
+    margin-bottom: 10px;
+}
+
+.text-limpiezas p {
+    margin: 6px 0;
+    font-size: 1.1rem;
+}
+
+/* RITUALES */
+.content-page-rituales {
+    padding: 20px;
+    background-color: #fffef8;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #6b3e26;
+    margin: 50px 10px;
+}
+
+/* Contenedor de artículos */
+.container-rituales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+/* Espaciado adicional opcional */
+.mb-20 {
+    margin-bottom: 35px;
+}
+
+/* Estilo común para todos los artículos */
+.box-ritual1,
+.box-ritual2,
+.box-ritual3,
+.box-ritual4,
+.box-ritual5 {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    flex: 1 1 280px;
+}
+
+.box-ritual1:hover,
+.box-ritual2:hover,
+.box-ritual3:hover,
+.box-ritual4:hover,
+.box-ritual5:hover {
+    transform: translateY(-5px);
+}
+
+/* Imágenes */
+.box-ritual1 img,
+.box-ritual2 img,
+.box-ritual3 img,
+.box-ritual4 img,
+.box-ritual5 img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Texto dentro de cada tarjeta */
+.text-rituales {
+    padding: 20px;
+    text-align: center;
+}
+
+.text-rituales h2 {
+    font-size: 1.3rem;
+    color: #402218;
+    margin-bottom: 10px;
+}
+
+.text-rituales p {
+    margin: 6px 0;
+    font-size: 1.1rem;
+}
+
+/* SECCION PRINCIPAL LIMPIEZAS ENERGETICAS (TODAS LAS ETIQUETAS) */
+
+/* Container-page1 */
+.container-page1 {
+    background-color: #fcf0da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-limpiezas1 {
+    display: flex;
+    flex-direction: row; 
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.card-limpiezas1 img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-limpiezas1 .text {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container-page1 h2 {
+    font-size: 2rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Tercera sección */
+.tercera-seccion {
+    background-color: #f5e9c3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-limpiezas2 {
+    display: flex;
+    flex-direction: row-reverse; 
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center; 
+}
+
+.card-limpiezas2 img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-limpiezas2 .text {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Estilos tipográficos */
+.container-page1 h1 {
+    font-size: 2.5rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.quinta-seccion h1 {
+    font-size: 2.5rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.container-page1 p, li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.quinta-seccion p, li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.container-page1 ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.quinta-seccion ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.container-page1 li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.quinta-seccion li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.container-page1 li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.quinta-seccion li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.tercera-seccion h2 {
+    font-size: 2.0rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.tercera-seccion p, li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.tercera-seccion ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.tercera-seccion li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.tercera-seccion li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* QUINTA SECCION */
+
+.quinta-seccion {
+    background-color: #fcf0da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-limpiezas3 {
+    display: flex;
+    flex-direction: row; 
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    align-items: center; 
+}
+
+.card-limpiezas3 img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-limpiezas3 .text {
+    width: 70%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.quinta-seccion h2 {
+    font-size: 2rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* SECCION TIENDA */
+/* Tipografía para la sección de cartas */
+.content-page-cartas h2 {
+    font-size: 2.5rem;
+    color: #5d3a3a;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.content-page-cartas p, 
+.content-page-cartas li {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-page-cartas ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.content-page-cartas li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.content-page-cartas li:before {
+    content: "•";
+    color: #d4af37;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* Contenedor general */
+.container-cartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+}
+
+/* Caja de carta */
+.box-cartas {
+    width: 400px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.box-cartas:hover {
+    transform: scale(1.03);
+}
+
+/* Imagen de la carta */
+.box-cartas img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Texto de la carta */
+.text-cartas {
+    padding: 15px;
+    text-align: center;
+}
+
+.text-cartas h2 {
+    font-size: 1.5rem;
+    color: #5d3a3a;
+    margin-bottom: 10px;
+}
+
+.text-cartas p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
 /* SECCION SOBRE MI */
 
 /* container-page */
 .container-page-sobreMi {
     display: flex;
-    justify-content: center; /* Centra horizontalmente la tarjeta */
+    justify-content: center; 
     padding: 20px;
     margin-top: 20px;
     margin-top: 0;
@@ -582,7 +1045,7 @@ section .overlay {
     width: 100%;
     max-width: 800px;
     gap: 24px;
-    box-sizing: border-box; /* Importante para que padding no rompa el ancho */
+    box-sizing: border-box; /* para que padding no rompa el ancho */
 }
 
 .container-page-sobreMi .card-sobreMi img {
@@ -602,24 +1065,24 @@ section .overlay {
 .container-page-sobreMi main section {
     display: flex;
     align-items: center;
-    background-color: white; /* card background */
-    border-radius: 0.75rem; /* subtle rounded corners */
+    background-color: white; 
+    border-radius: 0.75rem; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
     padding: 20px;
     width: 100%;
     max-width: 800px; 
-    gap: 24px; /* space between image and text */
+    gap: 24px; 
 }
 
 .container-page-sobreMi main section img {
-  width: 50%; /* Ancho de la imagen */
-  height: auto; /* Mantiene la proporción */
+  width: 50%; 
+  height: auto; 
   border-radius: 8px; /* Bordes redondeados para la imagen */
 }
 
 .container-page-sobreMi main section .text {
-    margin-left: 20px; /* Espacio entre la imagen y el texto */
-    width: 50%; /* Ancho del texto */
+    margin-left: 20px; 
+    width: 50%; 
 }
 
 .container-page-sobreMi .card-sobreMi .text h1 {
@@ -684,7 +1147,7 @@ section .overlay {
     text-decoration: underline;
 }
 
-/* --- ESTILOS PARA LA SECCIÓN DE POLÍTICAS DE PRIVACIDAD Y AVISO LEGAL --- */
+/* --- ESTILOS PARA LA SECCIÓN DE POLÍTICAS DE PRIVACIDAD,  AVISO LEGAL, COOKIES --- */
 .container3 {
     width: 95%;
     max-width: 600px;
@@ -740,8 +1203,8 @@ footer p {
 .footer-menu li {
     position: relative;
     display: inline-block;
-    padding-left: 12px; /* espacio para el símbolo */
-    margin-right: 15px; /* separación entre items */
+    padding-left: 12px; 
+    margin-right: 15px; 
     font-size: 14px; 
     line-height: 1.5;
 }
@@ -794,11 +1257,57 @@ footer p {
     color: #000;
 }
 
+/* Fondo bloqueador */
+#cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+}
+
+/* Caja del banner */
+#cookie-banner {
+    background-color: #fff4e5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+    color: #5d3a3a;
+    font-size: 1rem;
+}
+
+/* Botón */
+#cookie-banner button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#cookie-banner button:hover {
+    background-color: #b8952f;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
 .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: #f5e1b5; /* Color similar al fondo de tu imagen */
+    background-color: #f5e1b5; 
     position: absolute;
     top: 80px;
     right: 0;
@@ -806,7 +1315,6 @@ footer p {
     z-index: 1000;
     border-top: 1px solid #ccc;
 }
-
 
 .nav-menu.active {
     display: flex;
@@ -874,51 +1382,26 @@ footer p {
     align-items: center;
 }
 
-/* Index - SECCION LECTURAS DE TAROT */
-.cartas [data-aos] {
-    padding: 30px 24px;
+/* 4 SECCIONES PAGINA DE INICIO */
+.servicios-row {
+    grid-template-columns: 1fr; /* Apilar columnas */
+    gap: 50px;
+    padding: 20px;
 }
 
-.cartas [data-aos] img {
-    max-width: 70%;
-    margin-bottom: 16px;
+.servicios-grid h1 {
+    font-size: 1.4rem;
+    margin-bottom: 24px; 
+    text-align: center;
 }
 
-.cartas h1 {
-    font-size: 24px;
-    padding-top: 16px;
-    padding-bottom: 4px;
-}
-
-.cartas p {
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* Index - SECCION SESIONES MEDIUMNIDAD */
-    .sesiones [data-aos] {
-    padding: 30px 24px;
-}
-
-.sesiones [data-aos] img {
-    max-width: 70%;
-    margin-bottom: 16px;
-}
-
-.sesiones h1 {
-    font-size: 24px;
-    padding-top: 16px;
-    padding-bottom: 4px;
-}
-
-.sesiones p {
-    font-size: 15px;
-    line-height: 1.5;
+.servicios-grid p {
+    font-size: 0.95rem;
 }
 
 /* LECTURAS TAROT */
 .card-tarot {
-    flex-direction: column; /* Cambia de horizontal a vertical */
+    flex-direction: column; 
     gap: 24px;
     padding: 20px 16px;
 }
@@ -940,7 +1423,7 @@ footer p {
 
 /* CUARTA SECCIÓN */
 .card-tarot-2 {
-    flex-direction: column; /* En móviles, imagen encima del texto */
+    flex-direction: column; 
     gap: 24px;
     padding: 20px 16px;
 }
@@ -1010,6 +1493,85 @@ flex-direction: column;
     gap: 40px;
     padding: 24px 12px;
 }
+
+/* SECCIÓN LIMPIEZAS */
+.card-limpieza {
+    flex-direction: column; /* Imagen encima, texto debajo */
+    gap: 20px;
+    padding: 20px 16px;
+    align-items: center;
+    text-align: center;
+}
+
+.card-limpieza img {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 12px;
+}
+
+.card-limpieza .text {
+    width: 100%;
+    padding: 0;
+}
+
+/* SECCION MAL DE OJO */
+    .card-limpiezas1,
+    .card-limpiezas2,
+    .card-limpiezas3 {
+        display: flex;
+        flex-direction: column; /* Imagen arriba, texto debajo */
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .card-limpiezas1 img,
+    .card-limpiezas2 img,
+    .card-limpiezas3 img {
+        width: 90%;
+        max-width: 250px; /* un poco más pequeña */
+        border-radius: 12px;
+        height: auto;
+    }
+
+    .card-limpiezas1 .text2,
+    .card-limpiezas2 .text,
+    .card-limpiezas3 .text {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+/* SECCION TIENDA */
+    .container-cartas {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .box-cartas {
+        width: 90vw; /* ocupa casi todo el ancho disponible */
+        max-width: 400px;
+    }
+
+    .content-page-cartas h2 {
+        font-size: 1.7rem;
+    }
+
+    .text-cartas h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-page-cartas p,
+    .content-page-cartas li,
+    .text-cartas p {
+        font-size: 0.95rem;
+    }
+
+    .content-page-cartas li:before {
+        font-size: 1.3rem;
+        top: -3px;
+    }
+
 
 /* SOBRE MI */
 .container-page-sobreMi .card-sobreMi {
