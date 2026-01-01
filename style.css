@@ -1,7 +1,5 @@
 /* --- ESTILOS GENERALES --- */
 body {
-    display: flex;
-    flex-direction: column;
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
@@ -24,6 +22,8 @@ header {
     position: relative;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    height: 90px;               /* mismo tamaño en todas */
+    padding: 0 40px;
 }
 
 nav {
@@ -54,47 +54,46 @@ nav ul li a {
 }
 
 /* LOGO */
-.logo-title {
+header .logo-title {
     display: flex;
     align-items: center;
     gap: 16px;
+    
 }
 
-.logo {
+header .logo {
     width: 80px;
     height: auto;
     transition: transform 0.3s ease;
 }
 
-.logo:hover,
-.logo:focus {
+header .logo:hover,
+header .logo:focus {
     transform: scale(1.05);
     outline: none;
 }
 
 /* --- CABECERA CON IMAGEN --- */
 section.cabecera {
-    width: 100%;
-    max-width: 100%;
-    height: 300px;
     position: relative;
+    height: 300px;
+    width: 100%;
     overflow: hidden;
+    margin-top: 0;
 }
 
-section img {
+section.cabecera img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-section .overlay {
+section.cabecera .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(248, 241, 241, 0.249);
-    color: black;
+    inset: 0;
+    background: rgba(248, 241, 241, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -229,7 +228,6 @@ section .overlay {
     align-items: stretch;
 }
 
-
 /* Títulos */
 .servicios-grid h1 {
     font-size: 1.6rem;
@@ -278,6 +276,12 @@ section .overlay {
 [data-aos] {
     opacity: 0;
     transition-property: transform, opacity;
+}
+
+/* SECCION LECTURAS TAROT */
+body.lecturas-tarot {
+    display: flex;
+    flex-direction: column;
 }
 
 /* SECCION SESIONES MEDIUM */
@@ -1107,6 +1111,21 @@ footer p {
     text-align: center;
 }
 
+
+  .precio-compra {
+    align-items: center;   /* 🔑 centra todo */
+    text-align: center;
+  }
+
+  .precio-compra .precio {
+    text-align: center;
+  }
+
+  .btn-compra {
+    margin: 0 auto;        /* centra el botón */
+  }
+
+
 /* CONTAINER-PAGE2 */
 .container-page2 {
     gap: 40px;
@@ -1139,52 +1158,6 @@ flex-direction: column;
     padding: 24px 12px;
 }
 
-/* SECCIÓN LIMPIEZAS */
-.card-limpieza {
-    flex-direction: column; /* Imagen encima, texto debajo */
-    gap: 20px;
-    padding: 20px 16px;
-    align-items: center;
-    text-align: center;
-}
-
-.card-limpieza img {
-    width: 80%;
-    max-width: 300px;
-    border-radius: 12px;
-}
-
-.card-limpieza .text {
-    width: 100%;
-    padding: 0;
-}
-
-/* SECCION MAL DE OJO */
-    .card-limpiezas1,
-    .card-limpiezas2,
-    .card-limpiezas3 {
-        display: flex;
-        flex-direction: column; /* Imagen arriba, texto debajo */
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .card-limpiezas1 img,
-    .card-limpiezas2 img,
-    .card-limpiezas3 img {
-        width: 90%;
-        max-width: 250px; /* un poco más pequeña */
-        border-radius: 12px;
-        height: auto;
-    }
-
-    .card-limpiezas1 .text2,
-    .card-limpiezas2 .text,
-    .card-limpiezas3 .text {
-        width: 100%;
-        padding: 0 15px;
-    }
 
 /* SECCION TIENDA */
     .container-cartas {
