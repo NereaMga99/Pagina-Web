@@ -1,12 +1,18 @@
 /* --- ESTILOS GENERALES --- */
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
-    background-color: white;
+    background-color: #faf4ee;
     color: #1a1a1a;
     max-width: 100vw;
     overflow-x: hidden;
+}
+
+html, body {
+    height: 100%;
 }
 
 /* --- HEADER Y NAVEGACIÓN --- */
@@ -14,8 +20,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
-    padding: 1rem 2rem;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 nav {
@@ -110,7 +118,7 @@ section .overlay {
     display: flex;
     justify-content: center; 
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 3.5rem;
 }
 
 .container-page .card {
@@ -153,9 +161,9 @@ section .overlay {
 }
 
 .container-page main section img {
-  width: 50%; 
-  height: auto; 
-  border-radius: 8px; 
+    width: 50%; 
+    height: auto; 
+    border-radius: 8px; 
 }
 
 .container-page main section .text {
@@ -178,8 +186,9 @@ section .overlay {
 /* --- BOTÓN CONTACTAME  --- */
 .container-page a {
     background-color: #1e40af;
+    margin-left: 4rem;
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 3rem;
     border-radius: 0.5rem;
     margin-top: 80px;
     text-decoration: none;
@@ -190,7 +199,7 @@ section .overlay {
     background-color: #2563eb;
 }
 
-  /* 4 SECCIONES DEL INICIO */
+/* 4 SECCIONES DEL INICIO */
 /* Contenedor general */
 .servicios-container {
     max-width: 1200px;
@@ -204,19 +213,22 @@ section .overlay {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 80px; 
     padding: 40px 20px;
+    align-items: stretch;
 }
 
 /* Bloque de columna */
 .servicios-grid {
-    display: flex;               
+    display: flex;
+    align-items: flex-start;
 }
 
-/* Tarjeta interior (cartas, sesiones, limpiezas, rituales) */
+/* Tarjeta interior (cartas, sesiones, tienda, rituales) */
 .servicios-grid > div {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: stretch;
 }
+
 
 /* Títulos */
 .servicios-grid h1 {
@@ -242,6 +254,7 @@ section .overlay {
 
 .servicios-grid img {
     display: block;
+    margin-top: 0;
     width: 100%;
     aspect-ratio: 3 / 2;     
     object-fit: cover;
@@ -260,160 +273,12 @@ section .overlay {
     font-size: 1rem;
     line-height: 1.6;
     color: #404040;
-    margin: 0;
 }
 
 [data-aos] {
     opacity: 0;
     transition-property: transform, opacity;
 }
-
-/* SECCION LECTURAS DE TAROT */
-
-/* container-page3 */
-.container-page3 {
-    background-color: #fcf0da;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 30px 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-tarot {
-    display: flex;
-    flex-direction: row; 
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
-    padding: 30px 10px;
-    box-sizing: border-box;
-    align-items: center; 
-}
-
-.card-tarot img {
-    width: 30%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.card-tarot .text2 {
-    width: 70%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.container-page3 h2 {
-    font-size: 2rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-/* Cuarta sección */
-.cuarta-seccion {
-    background-color: #f5e9c3;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 30px 10px; 
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-tarot-2 {
-    display: flex;
-    flex-direction: row-reverse; 
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
-    padding: 30px 10px;
-    box-sizing: border-box;
-    align-items: center; 
-}
-
-.card-tarot-2 img {
-    width: 30%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.card-tarot-2 .text {
-    width: 70%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* Estilos tipográficos */
-.container-page3 h1 {
-    font-size: 2.5rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.container-page3 p, li {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.container-page3 ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.container-page3 li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.container-page3 li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-.cuarta-seccion h2 {
-    font-size: 1.8rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.cuarta-seccion p, li {
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-}
-
-.cuarta-seccion ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.cuarta-seccion li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.cuarta-seccion li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-} 
 
 /* SECCION SESIONES MEDIUM */
 
@@ -451,13 +316,14 @@ section .overlay {
     width: 70%;
     padding: 0 20px;
     box-sizing: border-box;
+    font-size: 1.1rem;
 }
 
 .container-page2 h2 {
     font-size: 2rem;
     color: #5d3a3a;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 /* Segunda sección */
@@ -502,39 +368,14 @@ section .overlay {
     font-size: 2.5rem;
     color: #5d3a3a;
     margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.container-page2 p, li {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.container-page2 ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.container-page2 li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.container-page2 li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
+    margin-bottom: 0;
 }
 
 .segunda-seccion h2 {
     font-size: 1.8rem;
     color: #5d3a3a;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .segunda-seccion p, li {
@@ -562,82 +403,36 @@ section .overlay {
     top: -5px;
 }
 
-/* SECCION LIMPIEZAS ENERGETICAS */
-
-.content-page-limpiezas {
-    padding: 20px;
-    background-color: #fffef8;
-}
-
-.main-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #6b3e26;
-    margin: 50px 10px;
-}
-
-/* Contenedor de artículos */
-.container-limpiezas {
+.precio-compra {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 0;
 }
 
-/* Espaciado adicional opcional */
-.mb-20 {
-    margin-bottom: 35px;
+.precio-compra .precio {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #b8962e;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Estilo común para todos los artículos */
-.box,
-.box1,
-.box2,
-.box3,
-.box4 {
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    max-width: 300px;
-    flex: 1 1 280px;
+.btn-compra {
+    background-color: #d4af37;
+    color: #5d3a3a;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.box:hover,
-.box1:hover,
-.box2:hover,
-.box3:hover,
-.box4:hover {
-    transform: translateY(-5px);
-}
-
-/* Imágenes */
-.box img,
-.box1 img,
-.box2 img,
-.box3 img,
-.box4 img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-/* Texto dentro de cada tarjeta */
-.text-limpiezas {
-    padding: 20px;
-    text-align: center;
-}
-
-.text-limpiezas h2 {
-    font-size: 1.3rem;
-    color: #402218;
-    margin-bottom: 10px;
-}
-
-.text-limpiezas p {
-    margin: 6px 0;
-    font-size: 1.1rem;
+.btn-compra:hover {
+    background-color: #b8962e;
+    transform: translateY(-2px);
 }
 
 /* RITUALES */
@@ -717,309 +512,159 @@ section .overlay {
     font-size: 1.1rem;
 }
 
-/* SECCION PRINCIPAL LIMPIEZAS ENERGETICAS (TODAS LAS ETIQUETAS) */
-
-/* Container-page1 */
-.container-page1 {
-    background-color: #fcf0da;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 30px 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-limpiezas1 {
-    display: flex;
-    flex-direction: row; 
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
-    padding: 30px 10px;
-    box-sizing: border-box;
-    align-items: center;
-}
-
-.card-limpiezas1 img {
-    width: 30%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.card-limpiezas1 .text {
-    width: 70%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.container-page1 h2 {
-    font-size: 2rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-/* Tercera sección */
-.tercera-seccion {
-    background-color: #f5e9c3;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 30px 10px; 
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-limpiezas2 {
-    display: flex;
-    flex-direction: row-reverse; 
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
-    padding: 30px 10px;
-    box-sizing: border-box;
-    align-items: center; 
-}
-
-.card-limpiezas2 img {
-    width: 30%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.card-limpiezas2 .text {
-    width: 70%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* Estilos tipográficos */
-.container-page1 h1 {
-    font-size: 2.5rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.quinta-seccion h1 {
-    font-size: 2.5rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.container-page1 p, li {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.quinta-seccion p, li {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.container-page1 ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.quinta-seccion ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.container-page1 li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.quinta-seccion li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.container-page1 li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-.quinta-seccion li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-.tercera-seccion h2 {
-    font-size: 2.0rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.tercera-seccion p, li {
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-}
-
-.tercera-seccion ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.tercera-seccion li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.tercera-seccion li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-/* QUINTA SECCION */
-
-.quinta-seccion {
-    background-color: #fcf0da;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 30px 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.card-limpiezas3 {
-    display: flex;
-    flex-direction: row; 
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
-    padding: 30px 10px;
-    box-sizing: border-box;
-    align-items: center; 
-}
-
-.card-limpiezas3 img {
-    width: 30%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.card-limpiezas3 .text {
-    width: 70%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.quinta-seccion h2 {
-    font-size: 2rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
 /* SECCION TIENDA */
-/* Tipografía para la sección de cartas */
-.content-page-cartas h2 {
-    font-size: 2.5rem;
-    color: #5d3a3a;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
 
-.content-page-cartas p, 
-.content-page-cartas li {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-.content-page-cartas ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.content-page-cartas li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 1.5rem;
-}
-
-.content-page-cartas li:before {
-    content: "•";
-    color: #d4af37;
-    font-size: 1.8rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-/* Contenedor general */
-.container-cartas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; 
-}
-
-/* Caja de carta */
-.box-cartas {
-    width: 400px; 
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-.box-cartas:hover {
-    transform: scale(1.03);
-}
-
-/* Imagen de la carta */
-.box-cartas img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Texto de la carta */
-.text-cartas {
-    padding: 15px;
+.tienda h1 {
     text-align: center;
-}
-
-.text-cartas h2 {
-    font-size: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: serif;
     color: #5d3a3a;
-    margin-bottom: 10px;
 }
 
-.text-cartas p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+.subtitulo-seccion {
+    width: 100%;
+    margin-top: 100px; 
+    font-size: 2rem;
+    font-family: serif;
+    color: #5d3a3a;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.productos {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cartasTarot,
+.rituales,
+.llaverosHechizo,
+.tiradasTarot,
+.kitRituales,
+.botellitasMedianas,
+.botellitasGrandes,
+.velasEsotericas,
+.pomadasEsotericas,
+.jabonesEsotericos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.productos article {
+    background: #ffffff;
+    border: 2px solid #ab9a1c;
+    border-radius: 6px;
+    padding: 20px 15px 25px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productos article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+.productos article img,
+.cartasTarot img,
+.kitRituales img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.cartasTarot {
+    display: flex;
+    justify-content: flex-start; /* izquierda */
+}
+
+.cartasTarot article {
+    max-width: 320px;
+}
+
+.productos h2 {
+    font-family: serif;
+    font-size: 1.6rem;
+    margin: 15px 0 25px;
+    color: #5d3a3a;
+}
+
+.productos h3 {
+    font-family: serif;
+    font-size: 1.4rem;
+    margin: 15px 0 25px;
+    color: #402218;
+}
+
+.productos p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.precio {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #b08a00;
+    margin-top: 10px;
+}
+
+/* AVISO EMERGENTE ENVIO GRATIS */
+.aviso-envio{
+    position: fixed;
+    bottom: 30px;
+    right: 30px; 
+    background: #ffffff;
+    max-width: 340px;             
+    padding: 22px 26px 24px;      
+    border-radius: 12px;           
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45); 
+    z-index: 999999;
+    font-family: serif;
+}
+
+/* Botón cerrar */
+.cerrar-aviso{
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;            
+    cursor: pointer;
+}
+
+/* Título */
+.aviso-envio h4{
+    margin: 0 0 10px;
+    color: #5d3a3a;
+    font-size: 1.35rem;            
+}
+
+/* Texto */
+.aviso-envio p{
+    margin: 0;
+    font-size: 1.05rem;            
+    color: #333;
+}
+
+/* Animación de entrada */
+@keyframes deslizar {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* SECCION SOBRE MI */
@@ -1029,8 +674,7 @@ section .overlay {
     display: flex;
     justify-content: center; 
     padding: 20px;
-    margin-top: 20px;
-    margin-top: 0;
+    margin-top: 4rem;
     padding-top: 0; /* Espacio superior para el header */
     padding-bottom: 50px; /* Espacio inferior para el footer */
 }
@@ -1075,9 +719,9 @@ section .overlay {
 }
 
 .container-page-sobreMi main section img {
-  width: 50%; 
-  height: auto; 
-  border-radius: 8px; /* Bordes redondeados para la imagen */
+    width: 50%; 
+    height: auto; 
+    border-radius: 8px; /* Bordes redondeados para la imagen */
 }
 
 .container-page-sobreMi main section .text {
@@ -1183,6 +827,7 @@ footer {
     background-color: white;
     border-top: 1px solid black;
     text-align: center;
+    margin-top: auto;
 }
 
 footer p {
@@ -1570,6 +1215,35 @@ flex-direction: column;
     .content-page-cartas li:before {
         font-size: 1.3rem;
         top: -3px;
+    }
+
+/* AVISO ENVIO GRATIS */
+    .aviso-envio {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        max-width: none;
+        width: auto;
+        padding: 18px 20px 20px;
+        text-align: center;
+        pointer-events: auto;
+    }
+
+    .aviso-envio h4 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+
+    .aviso-envio p {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+
+    .cerrar-aviso {
+        top: 8px;
+        right: 10px;
+        z-index: 1000000;
+        pointer-events: auto;
     }
 
 
