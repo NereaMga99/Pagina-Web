@@ -1112,18 +1112,18 @@ footer p {
 }
 
 
-  .precio-compra {
+.precio-compra {
     align-items: center;   /* 🔑 centra todo */
     text-align: center;
-  }
+}
 
-  .precio-compra .precio {
+.precio-compra .precio {
     text-align: center;
-  }
+}
 
-  .btn-compra {
+.btn-compra {
     margin: 0 auto;        /* centra el botón */
-  }
+}
 
 
 /* CONTAINER-PAGE2 */
