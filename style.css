@@ -22,7 +22,7 @@ header {
     position: relative;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    height: 90px;               /* mismo tamaño en todas */
+    height: 90px;              
     padding: 0 40px;
 }
 
@@ -167,8 +167,16 @@ section.cabecera .overlay {
 
 .container-page main section .text {
     margin-left: 20px;
-    width: 50%; 
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px; /* 👈 más aire ABAJO del botón */
 }
+
+.container-page .card {
+    padding: 20px 20px 50px; /* 👈 más aire abajo */
+}
+
 
 .container-page .card .text h1 {
     font-size: 20px;
@@ -184,18 +192,100 @@ section.cabecera .overlay {
 
 /* --- BOTÓN CONTACTAME  --- */
 .container-page a {
+    align-self: center;
+    margin-top: 20px;
+
     background-color: #1e40af;
-    margin-left: 4rem;
     color: white;
-    padding: 0.75rem 3rem;
-    border-radius: 0.5rem;
-    margin-top: 80px;
+
+    padding: 1.2rem 3rem; /* alto elegante */
+    min-width: 220px;
+    text-align: center;
+
+    border-radius: 0.6rem;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .container-page a:hover {
     background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* RITUAL TEMPORAL */
+.ritual-destacado-home {
+    width: 100%;
+    padding: 120px 0;
+}
+
+.ritual-destacado-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+
+    background: #ffffff;
+    border: 0.25rem solid #ab9a1c;
+    border-radius: 16px;
+    overflow: hidden; /* CLAVE TOTAL */
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen */
+.ritual-destacado-imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.ritual-destacado-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texto */
+.ritual-destacado-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.ritual-destacado-texto h2 {
+    font-family: serif;
+    font-size: 2.3rem;
+    color: #5d3a3a;
+    margin-bottom: 25px;
+}
+
+.ritual-destacado-texto p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+/* Botón */
+.btn-ritual-home {
+    margin-top: 30px;
+    align-self: center; /* 👈 centra el botón */
+    padding: 14px 34px;
+    background-color: #ab9a1c;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.btn-ritual-home:hover {
+    background-color: #8f7f12;
+    transform: translateY(-2px);
 }
 
 /* 4 SECCIONES DEL INICIO */
@@ -505,16 +595,19 @@ body.lecturas-tarot {
     text-align: center;
 }
 
-.text-rituales h2 {
-    font-size: 1.3rem;
-    color: #402218;
-    margin-bottom: 10px;
-}
-
 .text-rituales p {
     margin: 6px 0;
     font-size: 1.1rem;
 }
+
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: serif;
+    color: #5d3a3a;
+}
+
 
 /* SECCION TIENDA */
 
@@ -525,6 +618,41 @@ body.lecturas-tarot {
     font-family: serif;
     color: #5d3a3a;
 }
+
+.info-envios {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #fffef8;
+    border: 2px solid #ab9a1c;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.info-envios h2 {
+    font-family: serif;
+    color: #5d3a3a;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-envios p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info-envios ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.info-envios li {
+    margin-bottom: 10px;
+}
+
 
 .subtitulo-seccion {
     width: 100%;
@@ -979,8 +1107,9 @@ footer p {
 }
 
 .container-page .card {
+    display: flex;             
     flex-direction: column;
-    align-items: center;
+    align-items: center;       
     text-align: center;
 }
 
@@ -994,6 +1123,7 @@ footer p {
     width: 100%;
     margin-left: 0;
     margin-top: 20px;
+    text-align: center;
 }
 
 .container-page .card .text h1 {
@@ -1004,11 +1134,19 @@ footer p {
     font-size: 16px;
 }
 
+.container-page .card .text {
+    text-align: center;
+}
+
+.container-page .card .text a {
+    display: inline-block;
+    margin: 20px auto 0;
+}
+
 /* Botón de contacto */
 .container-page a {
     display: inline-block;
-    align-items: center;
-    margin-top: 20px;
+    margin: 20px auto 0; 
     background-color: #1e40af;
     color: white;
     padding: 0.75rem 1.5rem;
@@ -1018,7 +1156,39 @@ footer p {
 
 .container-page a:hover {
     background-color: #2563eb;
+}
+
+/* RITUAL DESTACADO HOME */
+.ritual-destacado-wrapper {
+    grid-template-columns: 1fr; 
+}
+
+.ritual-destacado-home {
+    padding-bottom: 40px;
+}
+
+.ritual-destacado-imagen {
+    height: auto;
+    background-color: #000; 
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.ritual-destacado-imagen img {
+    height: auto;
+    max-height: 420px;      
+    width: 100%;
+    object-fit: contain;    /* NO corta la imagen */
+}
+
+.ritual-destacado-texto {
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.btn-ritual-home {
+    align-self: center;
 }
 
 /* 4 SECCIONES PAGINA DE INICIO */
