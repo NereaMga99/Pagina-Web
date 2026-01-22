@@ -170,11 +170,11 @@ section.cabecera .overlay {
     width: 50%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 40px; /* 👈 más aire ABAJO del botón */
+    padding-bottom: 40px; 
 }
 
 .container-page .card {
-    padding: 20px 20px 50px; /* 👈 más aire abajo */
+    padding: 20px 20px 50px; 
 }
 
 
@@ -198,7 +198,7 @@ section.cabecera .overlay {
     background-color: #1e40af;
     color: white;
 
-    padding: 1.2rem 3rem; /* alto elegante */
+    padding: 1.2rem 3rem; 
     min-width: 220px;
     text-align: center;
 
@@ -228,7 +228,7 @@ section.cabecera .overlay {
     background: #ffffff;
     border: 0.25rem solid #ab9a1c;
     border-radius: 16px;
-    overflow: hidden; /* CLAVE TOTAL */
+    overflow: hidden; 
 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
@@ -271,7 +271,7 @@ section.cabecera .overlay {
 /* Botón */
 .btn-ritual-home {
     margin-top: 30px;
-    align-self: center; /* 👈 centra el botón */
+    align-self: center; 
     padding: 14px 34px;
     background-color: #ab9a1c;
     color: #ffffff;
@@ -608,9 +608,7 @@ body.lecturas-tarot {
     color: #5d3a3a;
 }
 
-
 /* SECCION TIENDA */
-
 .tienda h1 {
     text-align: center;
     font-size: 3rem;
@@ -652,7 +650,6 @@ body.lecturas-tarot {
 .info-envios li {
     margin-bottom: 10px;
 }
-
 
 .subtitulo-seccion {
     width: 100%;
