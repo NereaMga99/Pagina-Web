@@ -670,10 +670,10 @@ body.lecturas-tarot {
 .libroYTarot,
 .rituales,
 .llaverosHechizo,
+.productosRituales,
 .tiradasTarot,
 .kitRituales,
-.botellitasMedianas,
-.botellitasGrandes,
+.botellasEsotericas,
 .velasEsotericas,
 .pomadasEsotericas,
 .jabonesEsotericos {
@@ -1282,7 +1282,6 @@ footer p {
     margin: 0 auto;        /* centra el botón */
 }
 
-
 /* CONTAINER-PAGE2 */
 .container-page2 {
     gap: 40px;
@@ -1314,7 +1313,6 @@ flex-direction: column;
     gap: 40px;
     padding: 24px 12px;
 }
-
 
 /* SECCION TIENDA */
     .container-cartas {
@@ -1375,7 +1373,6 @@ flex-direction: column;
         z-index: 1000000;
         pointer-events: auto;
     }
-
 
 /* SOBRE MI */
 .container-page-sobreMi .card-sobreMi {
