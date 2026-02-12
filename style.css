@@ -1157,7 +1157,7 @@ footer p {
 }
 
 /* RITUAL DESTACADO HOME */
-.ritual-destacado-wrapper {
+/* .ritual-destacado-wrapper {
     grid-template-columns: 1fr; 
 }
 
@@ -1177,7 +1177,7 @@ footer p {
     height: auto;
     max-height: 420px;      
     width: 100%;
-    object-fit: contain;    /* NO corta la imagen */
+    object-fit: contain;    
 }
 
 .ritual-destacado-texto {
@@ -1187,7 +1187,7 @@ footer p {
 
 .btn-ritual-home {
     align-self: center;
-}
+} */
 
 /* 4 SECCIONES PAGINA DE INICIO */
 .servicios-row {
