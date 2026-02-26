@@ -120,30 +120,30 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
         <a href="https://www.tiktok.com/@jesica_medium" target="_blank" aria-label="TikTok">
             <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
         </a>
-        <a href="https://wa.me/34674029411" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/447958118105" target="_blank" aria-label="WhatsApp">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
         </a>
     </div>
 
     <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 </script>
 
 <script>
-  const navLinks = document.querySelectorAll('.nav-menu ul li a');
+    const navLinks = document.querySelectorAll('.nav-menu ul li a');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
-      this.classList.add('active'); // activa el clicado
-      navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+        this.classList.add('active'); // activa el clicado
+        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        });
     });
-  });
 </script>
 
 
