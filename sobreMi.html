@@ -102,24 +102,24 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
 </div>
 
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 </script>
 
 <script>
-  const navLinks = document.querySelectorAll('.nav-menu ul li a');
+    const navLinks = document.querySelectorAll('.nav-menu ul li a');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
-      this.classList.add('active'); // activa el clicado
-      navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+        this.classList.add('active'); // activa el clicado
+        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        });
     });
-  });
 </script>
 
 </body>
