@@ -1,3 +1,8 @@
+/* Regla de oro para evitar desajustes de anchos */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* --- ESTILOS GENERALES --- */
 body {
     margin: 0;
@@ -5,7 +10,7 @@ body {
     font-family: 'Georgia', serif;
     background-color: #faf4ee;
     color: #1a1a1a;
-    max-width: 100vw;
+    width: 100%; /* Cambiamos 100vw por 100% */
     overflow-x: hidden;
 }
 
@@ -146,7 +151,6 @@ section.cabecera .overlay {
     text-align: left;
 }
 
-/* ESTILO DE .CONTAINER-PAGE */
 .container-page main section {
     display: flex;
     align-items: center;
@@ -212,83 +216,134 @@ section.cabecera .overlay {
     transform: translateY(-1px);
 }
 
-/* RITUAL TEMPORAL */
-.ritual-destacado-home {
+/* --- LIBRO DESTACADO  --- */
+.destacado-libro-centrado {
     width: 100%;
-    padding: 120px 0;
+    padding: 50px 20px; 
+    background-color: white; 
+    margin: 30px 0;      
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.ritual-destacado-wrapper {
-    max-width: 1200px;
+.libro-centrado-wrapper {
+    max-width: 900px; 
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-
-    background: #ffffff;
-    border: 0.25rem solid #ab9a1c;
-    border-radius: 16px;
-    overflow: hidden; 
-
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-}
-
-/* Imagen */
-.ritual-destacado-imagen {
-    width: 100%;
-    height: 100%;
-}
-
-.ritual-destacado-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Texto */
-.ritual-destacado-texto {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
-.ritual-destacado-texto h2 {
-    font-family: serif;
-    font-size: 2.3rem;
-    color: #5d3a3a;
+/* Imagen del libro (Centrada y con sombra suave) */
+.libro-centrado-visual {
+    margin-bottom: 40px;
+    perspective: 1000px;
+}
+
+.libro-centrado-visual img {
+    max-width: 380px; /* Antes estaba en 250px, ahora es mucho más grande */
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    transform: rotateY(-10deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+}
+
+.destacado-libro-centrado:hover .libro-centrado-visual img {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+/* Textos Centrados  */
+.libro-centrado-texto h3 {
+    font-family: sans-serif; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.90rem; 
+    color: #ab9a1c; 
+    margin-bottom: 10px;
+}
+
+.libro-centrado-texto h2 {
+    font-size: 2.3rem; 
+    color: #5d3a3a; 
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.libro-centrado-texto p {
+    font-size: 1.2rem; /* Letra de párrafo estándar */
+    line-height: 1.7;
+    color: #404040;
+    max-width: 700px;
     margin-bottom: 25px;
 }
 
-.ritual-destacado-texto p {
+/* Bloque del regalo especial (MÁS PEQUEÑO Y COMPACTO) */
+.libro-centrado-info-extra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #faf4ee; 
+    padding: 10px 20px; /* Caja más estrecha */
+    border-radius: 50px;
+    margin-bottom: 30px;
+    border: 1px dashed #ab9a1c;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.libro-centrado-info-extra p {
+    margin: 0;
     font-size: 1rem;
-    line-height: 1.7;
     color: #333;
-    margin-bottom: 18px;
 }
 
-/* Botón */
-.btn-ritual-home {
-    margin-top: 30px;
-    align-self: center; 
-    padding: 14px 34px;
-    background-color: #ab9a1c;
-    color: #ffffff;
-    font-size: 1rem;
+.icono-regalo {
+    font-size: 1.2rem;
+}
+
+/* Llamada a la acción (Precio + Botón REDUCIDOS) */
+.libro-centrado-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.precio-libro {
+    font-size: 2rem; /* Antes 2.5rem */
     font-weight: bold;
-    border-radius: 30px;
+    color: #1a1a1a;
+    font-family: 'Georgia', serif;
+}
+
+.btn-compra-libro {
+    display: inline-block;
+    background-color: #1e40af; 
+    color: white;
+    padding: 1rem 2.5rem; /* Botón menos "gordo" */
+    font-size: 1rem; /* Letra del botón reducida */
     text-decoration: none;
-    transition: all 0.3s ease;
+    border-radius: 50px; 
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
 }
 
-
-.btn-ritual-home:hover {
-    background-color: #8f7f12;
-    transform: translateY(-2px);
+.btn-compra-libro:hover {
+    background-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
 }
 
-/* 4 SECCIONES DEL INICIO */
+/* 3 SECCIONES DEL INICIO */
 /* Contenedor general */
 .servicios-container {
     max-width: 1200px;
@@ -311,7 +366,7 @@ section.cabecera .overlay {
     align-items: flex-start;
 }
 
-/* Tarjeta interior (cartas, sesiones, tienda, rituales) */
+/* Tarjeta interior (cartas, sesiones, rituales) */
 .servicios-grid > div {
     display: flex;
     flex-direction: column;
@@ -372,6 +427,81 @@ section.cabecera .overlay {
 body.lecturas-tarot {
     display: flex;
     flex-direction: column;
+}
+
+.subtitulo-seccion {
+    width: 100%;
+    margin-top: 100px; 
+    font-size: 2rem;
+    font-family: serif;
+    color: #5d3a3a;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.productos {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.rituales,
+.tiradasTarot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.productos article {
+    background: #ffffff;
+    border: 2px solid #ab9a1c;
+    border-radius: 6px;
+    padding: 20px 15px 25px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productos article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+.productos article img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.productos h2 {
+    font-family: serif;
+    font-size: 1.6rem;
+    margin: 15px 0 25px;
+    color: #5d3a3a;
+}
+
+.productos h3 {
+    font-family: serif;
+    font-size: 1.4rem;
+    margin: 15px 0 25px;
+    color: #402218;
+}
+
+.productos p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.precio {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #b08a00;
+    margin-top: 10px;
 }
 
 /* SECCION SESIONES MEDIUM */
@@ -608,185 +738,6 @@ body.lecturas-tarot {
     color: #5d3a3a;
 }
 
-/* SECCION TIENDA */
-.tienda h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 50px;
-    font-family: serif;
-    color: #5d3a3a;
-}
-
-.info-envios {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 40px;
-    background-color: #fffef8;
-    border: 2px solid #ab9a1c;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.info-envios h2 {
-    font-family: serif;
-    color: #5d3a3a;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.info-envios p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.info-envios ul {
-    margin: 20px 0;
-    padding-left: 20px;
-}
-
-.info-envios li {
-    margin-bottom: 10px;
-}
-
-.subtitulo-seccion {
-    width: 100%;
-    margin-top: 100px; 
-    font-size: 2rem;
-    font-family: serif;
-    color: #5d3a3a;
-    text-align: left;
-    padding-left: 20px;
-}
-
-.productos {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.libroYTarot,
-.tarjetasNFC,
-.rituales,
-.llaverosHechizo,
-.productosRituales,
-.tiradasTarot,
-.kitRituales,
-.botellasEsotericas,
-.velasEsotericas,
-.pomadasEsotericas,
-.jabonesEsotericos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.productos article {
-    background: #ffffff;
-    border: 2px solid #ab9a1c;
-    border-radius: 6px;
-    padding: 20px 15px 25px;
-    text-align: center;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.productos article:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
-}
-
-.productos article img,
-.kitRituales img {
-    width: 100%;
-    max-height: 320px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.productos h2 {
-    font-family: serif;
-    font-size: 1.6rem;
-    margin: 15px 0 25px;
-    color: #5d3a3a;
-}
-
-.productos h3 {
-    font-family: serif;
-    font-size: 1.4rem;
-    margin: 15px 0 25px;
-    color: #402218;
-}
-
-.productos p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.precio {
-    display: block;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #b08a00;
-    margin-top: 10px;
-}
-
-/* AVISO EMERGENTE ENVIO GRATIS */
-.aviso-envio{
-    position: fixed;
-    bottom: 30px;
-    right: 30px; 
-    background: #ffffff;
-    max-width: 340px;             
-    padding: 22px 26px 24px;      
-    border-radius: 12px;           
-    box-shadow: 0 18px 40px rgba(0,0,0,0.45); 
-    z-index: 999999;
-    font-family: serif;
-}
-
-/* Botón cerrar */
-.cerrar-aviso{
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    background: none;
-    border: none;
-    font-size: 1.6rem;            
-    cursor: pointer;
-}
-
-/* Título */
-.aviso-envio h4{
-    margin: 0 0 10px;
-    color: #5d3a3a;
-    font-size: 1.35rem;            
-}
-
-/* Texto */
-.aviso-envio p{
-    margin: 0;
-    font-size: 1.05rem;            
-    color: #333;
-}
-
-/* Animación de entrada */
-@keyframes deslizar {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 /* SECCION SOBRE MI */
 
 /* container-page */
@@ -940,7 +891,6 @@ body.lecturas-tarot {
 .container3 ul {
     padding-left: 13px;
 }
-
 
 /* --- FOOTER --- */
 footer {
@@ -1283,7 +1233,7 @@ footer p {
     margin: 0 auto;        /* centra el botón */
 }
 
-/* CONTAINER-PAGE2 */
+/* seccion medium- CONTAINER-PAGE2 */
 .container-page2 {
     gap: 40px;
     padding: 24px 12px;
@@ -1315,66 +1265,6 @@ flex-direction: column;
     padding: 24px 12px;
 }
 
-/* SECCION TIENDA */
-    .container-cartas {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .box-cartas {
-        width: 90vw; /* ocupa casi todo el ancho disponible */
-        max-width: 400px;
-    }
-
-    .content-page-cartas h2 {
-        font-size: 1.7rem;
-    }
-
-    .text-cartas h2 {
-        font-size: 1.2rem;
-    }
-
-    .content-page-cartas p,
-    .content-page-cartas li,
-    .text-cartas p {
-        font-size: 0.95rem;
-    }
-
-    .content-page-cartas li:before {
-        font-size: 1.3rem;
-        top: -3px;
-    }
-
-/* AVISO ENVIO GRATIS */
-    .aviso-envio {
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        max-width: none;
-        width: auto;
-        padding: 18px 20px 20px;
-        text-align: center;
-        pointer-events: auto;
-    }
-
-    .aviso-envio h4 {
-        font-size: 1.3rem;
-        line-height: 1.3;
-    }
-
-    .aviso-envio p {
-        font-size: 1.05rem;
-        line-height: 1.4;
-    }
-
-    .cerrar-aviso {
-        top: 8px;
-        right: 10px;
-        z-index: 1000000;
-        pointer-events: auto;
-    }
-
 /* SOBRE MI */
 .container-page-sobreMi .card-sobreMi {
     flex-direction: column;
@@ -1402,7 +1292,7 @@ flex-direction: column;
 .social-icons {
     position: fixed;
     bottom: 16px;
-    right: 16px; /* seguimos alineados a la derecha */
+    right: 16px; 
     flex-direction: column; /* en línea vertical */
     gap: 10px;
     z-index: 1000;
