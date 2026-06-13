@@ -58,3 +58,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+/* --- BOTÓN VOLVER ARRIBA --- */
+document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('btn-top');
+    if (!btn) return;
+
+    // Mostrar u ocultar según scroll
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            btn.style.display = 'flex';
+        } else {
+            btn.style.display = 'none';
+        }
+    });
+
+    // Acción al pulsar
+    btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
