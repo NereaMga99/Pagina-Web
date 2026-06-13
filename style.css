@@ -276,38 +276,13 @@ section.cabecera .overlay {
 }
 
 .libro-centrado-texto p {
-    font-size: 1.2rem; /* Letra de párrafo estándar */
+    font-size: 1.2rem; 
     line-height: 1.7;
     color: #404040;
     max-width: 700px;
     margin-bottom: 25px;
 }
 
-/* Bloque del regalo especial (MÁS PEQUEÑO Y COMPACTO) */
-.libro-centrado-info-extra {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background-color: #faf4ee; 
-    padding: 10px 20px; /* Caja más estrecha */
-    border-radius: 50px;
-    margin-bottom: 30px;
-    border: 1px dashed #ab9a1c;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.libro-centrado-info-extra p {
-    margin: 0;
-    font-size: 1rem;
-    color: #333;
-}
-
-.icono-regalo {
-    font-size: 1.2rem;
-}
 
 /* Llamada a la acción (Precio + Botón REDUCIDOS) */
 .libro-centrado-cta {
@@ -318,7 +293,7 @@ section.cabecera .overlay {
 }
 
 .precio-libro {
-    font-size: 2rem; /* Antes 2.5rem */
+    font-size: 2rem; 
     font-weight: bold;
     color: #1a1a1a;
     font-family: 'Georgia', serif;
@@ -328,8 +303,8 @@ section.cabecera .overlay {
     display: inline-block;
     background-color: #1e40af; 
     color: white;
-    padding: 1rem 2.5rem; /* Botón menos "gordo" */
-    font-size: 1rem; /* Letra del botón reducida */
+    padding: 1rem 2.5rem; 
+    font-size: 1rem; 
     text-decoration: none;
     border-radius: 50px; 
     font-weight: bold;
@@ -1327,6 +1302,3 @@ flex-direction: column;
     color: #1e40af;
 }
 }
-
-
-

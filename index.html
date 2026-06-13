@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSSZGRB6CC"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-CSSZGRB6CC');
-</script>
+<script src="script.js"></script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <!-- Meta palabras clave -->
 <meta name="keywords" content="Almeria, Madrid, Roquetas, Barcelona, tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium, lecturas de tarot, 
@@ -91,16 +84,11 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
             <h3>Novedad Editorial</h3>
             <h2>Guía Completa de Rituales</h2>
             
-            <p>En estas páginas te enseño a realizar rituales desde cero. Aprenderás cómo montar un altar correctamente, qué elementos necesitas y cómo utilizarlos para que los rituales sean realmente efectivos, no solo simbólicos.</p>
-
-            <div class="libro-centrado-info-extra">
-                <span class="icono-regalo">🎁</span>
-                <p><strong>Detalle especial:</strong> Este libro incluye un separador de páginas elaborado a mano por mí.</p>
-            </div>
+            <p>En estas páginas de este libro digital en <strong>PDF</strong> te enseño a realizar rituales desde cero. Aprenderás cómo montar un altar correctamente, qué elementos necesitas y cómo utilizarlos para que los rituales sean realmente efectivos, no solo simbólicos.</p>
 
             <div class="libro-centrado-cta">
-                <span class="precio-libro">28,95€</span>
-                <a href="https://ai6mq0-4x.myshopify.com/es/products/secreto-de-rituales" target="_blank" class="btn-compra-libro">Quiero mi ejemplar</a>
+                <span class="precio-libro">15,00€</span>
+                <a href="https://ai6mq0-4x.myshopify.com/es/products/digital-product" target="_blank" class="btn-compra-libro">Quiero mi ejemplar</a>
             </div>
         </div>
     </div>
@@ -166,19 +154,22 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
 </section>
 
 <!-- Overlay bloqueador -->
-<div id="cookie-overlay">
+<div id="cookie-overlay" style="display:none">
     <div id="cookie-banner">
         <span>
         Utilizamos cookies para mejorar tu experiencia. Al aceptar, permites el uso de Google Analytics.
         </span>
-        <button id="accept-cookies">Aceptar</button>
+        <div class="cookie-buttons">
+            <button id="accept-cookies">Aceptar</button>
+            <button id="reject-cookies">Rechazar</button>
+        </div>
     </div>
 </div>
 
 
 <footer>
 <ul class="footer-menu">
-    <li>© 2025, <a href="index.html">Jessica Médium 2025.</a></li>
+    <li> © 2026, <a href="index.html">Jessica Médium. Todos los derechos reservados.</a></li>
     <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
     <li><a href="avisoLegal.html">Aviso legal</a></li>
     <li><a href="cookies.html">Politica de Cookies</a></li>
@@ -209,28 +200,21 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
     const navMenu = document.querySelector('.nav-menu');
 
     hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    });
-    </script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const overlay = document.getElementById("cookie-overlay");
-        const button = document.getElementById("accept-cookies");
-
-        if (localStorage.getItem("cookiesAccepted") === "true") {
-        overlay.style.display = "none";
-        } else {
-        overlay.style.display = "flex";
-        }
-
-        button.addEventListener("click", function () {
-        localStorage.setItem("cookiesAccepted", "true");
-        overlay.style.display = "none";
-        });
+        navMenu.classList.toggle('active');
     });
 </script>
 
+<script>
+    const navLinks = document.querySelectorAll('.nav-menu ul li a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+        this.classList.add('active'); // activa el clicado
+        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        });
+    });
+</script>
 
 </body>
 </html>

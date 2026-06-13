@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSSZGRB6CC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CSSZGRB6CC');
-</script>
+<script src="script.js"></script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Meta palabras clave -->
 <meta name="keywords" content="tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium">
@@ -24,7 +17,7 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- libreria AOS para animaciones --> 
-    <title>Aviso Legal</title>
+    <title>Política de Cookies</title>
     <link rel="icon" href="favicon.png" type="image/png"> <!-- FAVICON -->
 </head>
 
@@ -84,7 +77,7 @@ Estas cookies no permiten identificar al usuario.</p>
 <footer>
 <p>
     <ul class="footer-menu">
-        <li> © 2025, <a href= "index.html">Jessica Médium 2025.</a></li>
+        <li> © 2026, <a href="index.html">Jessica Médium. Todos los derechos reservados.</a></li>
         <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
         <li><a href="avisoLegal.html">Aviso legal</a></li>
         <li><a href="cookies.html">Politica de Cookies</a></li>
@@ -116,19 +109,19 @@ Estas cookies no permiten identificar al usuario.</p>
     const navMenu = document.querySelector('.nav-menu');
 
     hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-    </script>
+</script>
 
-    <script>
+<script>
     const navLinks = document.querySelectorAll('.nav-menu ul li a');
 
     navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active')); 
-        this.classList.add('active'); 
-        navMenu.classList.remove('active'); 
-    });
+        link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+        this.classList.add('active'); // activa el clicado
+        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        });
     });
 </script>
 
