@@ -1,24 +1,31 @@
-/* Regla de oro para evitar desajustes de anchos */
+/* Para evitar desajustes de anchos */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 /* --- ESTILOS GENERALES --- */
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
     background-color: #faf4ee;
     color: #1a1a1a;
-    width: 100%; /* Cambiamos 100vw por 100% */
-    overflow-x: hidden;
-}
-
-html, body {
+    width: 100%;
     height: 100%;
+    overflow-x: clip;
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
+main {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: clip;
+}
+
+/* HEADER Y NAVEGACIÓN */
 header {
     display: flex;
     align-items: center;
@@ -216,7 +223,7 @@ section.cabecera .overlay {
     transform: translateY(-1px);
 }
 
-/* --- LIBRO DESTACADO  --- */
+/* LIBRO DESTACADO  */
 .destacado-libro-centrado {
     width: 100%;
     padding: 50px 20px; 
@@ -246,7 +253,7 @@ section.cabecera .overlay {
 }
 
 .libro-centrado-visual img {
-    max-width: 380px; /* Antes estaba en 250px, ahora es mucho más grande */
+    max-width: 380px; 
     height: auto;
     border-radius: 4px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
@@ -324,12 +331,14 @@ section.cabecera .overlay {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* Cada fila con dos columnas */
 .servicios-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, minmax(min(280px, 100%), 1fr));
     gap: 80px; 
     padding: 40px 20px;
     align-items: stretch;
@@ -418,12 +427,14 @@ body.lecturas-tarot {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .rituales,
 .tiradasTarot {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
     gap: 40px;
     margin-bottom: 60px;
 }
@@ -495,7 +506,7 @@ body.lecturas-tarot {
 
 .card {
     display: flex;
-    flex-direction: row; /* Acomoda imagen a la izquierda y texto a la derecha */
+    flex-direction: row; 
     max-width: 1200px;
     width: 100%;
     gap: 40px;
@@ -635,6 +646,57 @@ body.lecturas-tarot {
 }
 
 /* RITUALES */
+/* pestaña de los rituales */
+.rituales-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0 auto 40px;
+    max-width: 700px;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border: 2px solid #ab9a1c;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #5d3a3a;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #f5e9c3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #d4af37, #7c5c2e);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(180, 140, 30, 0.35);
+}
+
+.tab-icon {
+    font-size: 1.1rem;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
 .content-page-rituales {
     padding: 20px;
     background-color: #fffef8;
@@ -985,7 +1047,7 @@ footer p {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 9999;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     pointer-events: all;
@@ -1023,10 +1085,12 @@ footer p {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
+/* NAVEGACIÓN */
 .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: #f5e1b5; 
+    background-color: #f5e1b5;
     position: absolute;
     top: 80px;
     right: 0;
@@ -1054,15 +1118,19 @@ footer p {
     display: block;
 }
 
+/* CONTAINER-PAGE (index: jessica presentacion) */
 .container-page {
     padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .container-page .card {
-    display: flex;             
     flex-direction: column;
-    align-items: center;       
+    align-items: center;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .container-page .card img {
@@ -1086,73 +1154,49 @@ footer p {
     font-size: 16px;
 }
 
-.container-page .card .text {
-    text-align: center;
-}
-
-.container-page .card .text a {
-    display: inline-block;
-    margin: 20px auto 0;
-}
-
 /* Botón de contacto */
 .container-page a {
     display: inline-block;
-    margin: 20px auto 0; 
+    margin: 20px auto 0;
     background-color: #1e40af;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
+    min-width: unset;
 }
 
 .container-page a:hover {
     background-color: #2563eb;
 }
 
-/* RITUAL DESTACADO HOME */
-/* .ritual-destacado-wrapper {
-    grid-template-columns: 1fr; 
+/* LIBRO DESTACADO */
+.libro-centrado-visual img {
+    max-width: 85vw;
 }
 
-.ritual-destacado-home {
-    padding-bottom: 40px;
+.libro-centrado-texto h2 {
+    font-size: 1.6rem;
 }
 
-.ritual-destacado-imagen {
-    height: auto;
-    background-color: #000; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.libro-centrado-texto p {
+    font-size: 1rem;
 }
 
-.ritual-destacado-imagen img {
-    height: auto;
-    max-height: 420px;      
-    width: 100%;
-    object-fit: contain;    
+/* SECCIONES DE INICIO (3 servicios) */
+.servicios-container {
+    padding: 20px 12px;
 }
 
-.ritual-destacado-texto {
-    padding: 35px 25px;
-    text-align: center;
-}
-
-.btn-ritual-home {
-    align-self: center;
-} */
-
-/* 4 SECCIONES PAGINA DE INICIO */
 .servicios-row {
-    grid-template-columns: 1fr; /* Apilar columnas */
-    gap: 50px;
-    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px 0;
 }
 
 .servicios-grid h1 {
     font-size: 1.4rem;
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
     text-align: center;
 }
 
@@ -1162,7 +1206,7 @@ footer p {
 
 /* LECTURAS TAROT */
 .card-tarot {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 24px;
     padding: 20px 16px;
 }
@@ -1182,9 +1226,8 @@ footer p {
     font-size: 1.5rem;
 }
 
-/* CUARTA SECCIÓN */
 .card-tarot-2 {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 24px;
     padding: 20px 16px;
 }
@@ -1206,6 +1249,15 @@ footer p {
 }
 
 /* SESIONES MEDIUM */
+.container-page2 {
+    gap: 40px;
+    padding: 24px 12px;
+}
+
+.container-page2 h2 {
+    font-size: 1.5rem;
+}
+
 .card {
     flex-direction: column;
     gap: 24px;
@@ -1223,9 +1275,8 @@ footer p {
     text-align: center;
 }
 
-
 .precio-compra {
-    align-items: center;   /* 🔑 centra todo */
+    align-items: center;
     text-align: center;
 }
 
@@ -1234,21 +1285,11 @@ footer p {
 }
 
 .btn-compra {
-    margin: 0 auto;        /* centra el botón */
-}
-
-/* seccion medium- CONTAINER-PAGE2 */
-.container-page2 {
-    gap: 40px;
-    padding: 24px 12px;
-}
-
-.container-page2 h2 {
-    font-size: 1.5rem;
+    margin: 0 auto;
 }
 
 .card2 {
-flex-direction: column;
+    flex-direction: column;
     gap: 24px;
     padding: 20px 16px;
 }
@@ -1267,6 +1308,60 @@ flex-direction: column;
 .segunda-seccion {
     gap: 40px;
     padding: 24px 12px;
+}
+
+/* RITUALES */
+.productos {
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-title {
+    font-size: 2rem;
+    margin: 30px 10px;
+}
+
+.rituales,
+.tiradasTarot {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.productos article {
+    padding: 16px 12px 20px;
+}
+
+.productos article img {
+    max-height: 240px;
+}
+
+.productos h3 {
+    font-size: 1.15rem;
+    margin: 10px 0 14px;
+}
+
+.productos p {
+    font-size: 0.9rem;
+}
+
+.rituales-tabs {
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 0 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tab-btn {
+    padding: 9px 16px;
+    font-size: 0.85rem;
+    gap: 6px;
+}
+
+.tab-icon {
+    font-size: 1rem;
 }
 
 /* SOBRE MI */
@@ -1296,8 +1391,8 @@ flex-direction: column;
 .social-icons {
     position: fixed;
     bottom: 16px;
-    right: 16px; 
-    flex-direction: column; /* en línea vertical */
+    right: 16px;
+    flex-direction: column;
     gap: 10px;
     z-index: 1000;
 }
@@ -1330,4 +1425,5 @@ flex-direction: column;
     left: 0;
     color: #1e40af;
 }
+
 }

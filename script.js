@@ -13,14 +13,18 @@ function loadAnalytics() {
     gtag('config', 'G-CSSZGRB6CC');
 }
 
-/* Lectura/escritura de storage compatible con Brave */
+/* Fallback en memoria cuando Brave bloquea todo el storage */
+var _memoryStorage = {};
+
 function storageGet(key) {
-    try { return localStorage.getItem(key); } catch (e) {}
-    try { return sessionStorage.getItem(key); } catch (e) {}
+    if (_memoryStorage[key] !== undefined) return _memoryStorage[key];
+    try { var v = localStorage.getItem(key); if (v !== null) return v; } catch (e) {}
+    try { var v = sessionStorage.getItem(key); if (v !== null) return v; } catch (e) {}
     return null;
 }
 function storageSet(key, value) {
-    try { localStorage.setItem(key, value); return; } catch (e) {}
+    _memoryStorage[key] = value;
+    try { localStorage.setItem(key, value); } catch (e) {}
     try { sessionStorage.setItem(key, value); } catch (e) {}
 }
 
@@ -36,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var overlay = document.getElementById('cookie-overlay');
     if (!overlay) return; // Si la página no tiene banner, salir
 
-    if (!storageGet('cookiesDecision')) {
+    /* Mostrar solo si no hay decisión previa */
+    if (storageGet('cookiesDecision') === null) {
         overlay.style.display = 'flex';
     }
 
@@ -58,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
 /* --- BOTÓN VOLVER ARRIBA --- */
 document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById('btn-top');
