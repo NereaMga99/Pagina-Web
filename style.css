@@ -408,19 +408,19 @@ section.cabecera .overlay {
 }
 
 /* SECCION LECTURAS TAROT */
+/* SECCION LECTURAS TAROT */
 body.lecturas-tarot {
     display: flex;
     flex-direction: column;
 }
 
-.subtitulo-seccion {
-    width: 100%;
-    margin-top: 100px; 
-    font-size: 2rem;
+.main-title {
+    font-size: 2.5rem;
     font-family: serif;
     color: #5d3a3a;
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    margin: 40px 10px 30px;
+    padding-top: 10px;
 }
 
 .productos {
@@ -431,10 +431,11 @@ body.lecturas-tarot {
     width: 100%;
 }
 
-.rituales,
 .tiradasTarot {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    /* Cambiado a auto-fit y tamaño máximo ampliado a 480px para pantallas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 480px));
+    justify-content: center;
     gap: 40px;
     margin-bottom: 60px;
 }
@@ -442,23 +443,33 @@ body.lecturas-tarot {
 .productos article {
     background: #ffffff;
     border: 2px solid #ab9a1c;
-    border-radius: 6px;
-    padding: 20px 15px 25px;
+    border-radius: 12px; 
+    padding: 35px 25px; 
     text-align: center;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.productos article a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
 }
 
 .productos article:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .productos article img {
     width: 100%;
-    max-height: 320px;
+    max-height: 380px; 
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .productos h2 {
@@ -470,24 +481,28 @@ body.lecturas-tarot {
 
 .productos h3 {
     font-family: serif;
-    font-size: 1.4rem;
-    margin: 15px 0 25px;
+    font-size: 1.5rem; 
+    margin: 15px 0 20px;
     color: #402218;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .productos p {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1rem; 
+    line-height: 1.6;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .precio {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.5rem; 
     font-weight: bold;
     color: #b08a00;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 /* SECCION SESIONES MEDIUM */
@@ -702,14 +717,13 @@ body.lecturas-tarot {
     background-color: #fffef8;
 }
 
-.main-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #6b3e26;
-    margin: 50px 10px;
+/* Contenedor de artículos */
+.rituales {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 40px;
 }
 
-/* Contenedor de artículos */
 .container-rituales {
     display: flex;
     flex-wrap: wrap;
@@ -765,14 +779,6 @@ body.lecturas-tarot {
 .text-rituales p {
     margin: 6px 0;
     font-size: 1.1rem;
-}
-
-.main-title {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 50px;
-    font-family: serif;
-    color: #5d3a3a;
 }
 
 /* SECCION SOBRE MI */
@@ -1205,10 +1211,11 @@ footer p {
 }
 
 /* LECTURAS TAROT */
-.card-tarot {
-    flex-direction: column;
+.tiradasTarot {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
     gap: 24px;
-    padding: 20px 16px;
+    margin-bottom: 40px;
 }
 
 .card-tarot img {
@@ -1314,16 +1321,12 @@ footer p {
 .productos {
     padding: 0 12px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-.main-title {
-    font-size: 2rem;
-    margin: 30px 10px;
-}
-
-.rituales,
-.tiradasTarot {
+.rituales {
     grid-template-columns: 1fr;
     gap: 24px;
     margin-bottom: 40px;
