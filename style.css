@@ -23,6 +23,7 @@ main {
     width: 100%;
     box-sizing: border-box;
     overflow-x: clip;
+    padding-bottom: 60px; /* Espacio para el footer */
 }
 
 /* HEADER Y NAVEGACIÓN */
@@ -506,7 +507,6 @@ body.lecturas-tarot {
 }
 
 /* SECCION SESIONES MEDIUM */
-
 /* estilos de .container-page2 */
 .container-page2 {
     background-color: #fcf0da;
