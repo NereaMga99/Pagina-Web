@@ -18,9 +18,6 @@ además de un menú flotante lateral derecho para redes sociales (Instagram, Tik
 ### 2. Lecturas de Tarot.
 Sección enfocada en lecturas detalladas y personalizadas enviadas vía audio junto a una fotografía de la tirada. Incluye tarifas estructuradas según el volumen de consulta:
 * **Lectura de Tarot (1 pregunta)** 
-* **Lectura de Tarot (2 preguntas)** 
-* **Lectura de Tarot (3 preguntas)**
-* **Lectura de Tarot (4 preguntas)**
 * *(Escalable a más opciones según las necesidades del negocio).*
 
 ### 3. Sesiones de Mediumnidad.
