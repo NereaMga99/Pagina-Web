@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Meta palabras clave -->
+<meta name="keywords" content="Almeria, Madrid, Roquetas, Barcelona, tarot, mediumnidad, medium, guía espiritual, psíquica, fallecidos, Jessica, JessicaMedium, lecturas de tarot, 
+sesiones médium, rituales esotéricos, tienda esotérica, velas ritualizadas, amuletos, accesorios espirituales, amarres, protección espiritual, 
+sanación energética, conexión con el más allá">
+
+<!-- Meta descripción optimizada -->
+<meta name="description" content="Jessica Medium ofrece sesiones de tarot, mediumnidad y guía espiritual para conectar con seres queridos fallecidos, 
+obtener orientación psíquica y encontrar claridad en tu camino.">
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <title>Jessica Medium</title>
+    <link rel="icon" href="favicon.png" type="image/png"> <!-- FAVICON -->
+</head>
+
+<body>
+<header>
+    <div class="logo-title">
+    <a href="index.html">
+        <img src="imagenes/logo/logo.JPG" alt="Logo de Jessica Medium" class="logo" />
+    </a>
+    </div>
+
+    <!-- Botón hamburguesa a la derecha -->
+<button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu" aria-label="Menú principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
+            <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
+            <li><a href="rituales.html">Rituales</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="sobreMi.html">Sobre mí</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="productos" data-aos="fade-up" data-aos-duration="1000"> 
+        <h1 class="main-title" data-aos="fade-down" data-aos-duration="1000">CURSOS</h1>
+
+        <div class="tarot">
+            <article class="pregunta-1">
+                <a href="https://ai6mq0-4x.myshopify.com/es/products/curso-intensivo-de-tarot-los-22-arcanos-mayores">
+                    <img src="imagenes/cursos/cursoTarot.jpeg" alt="Curso de Tarot"/>
+                </a>
+                <h3>Curso de Tarot</h3>
+                <p>Descubre el poder del tarot con el curso intensivo de los 22 Arcanos Mayores. <br> Si quieres aprender los Arcanos Mayores y dominar la Tirada Gitana con el método que utilizo en todas mis lecturas, este es tu curso.</p>
+                <span class="precio">90€</span>
+            </article>
+        </div>
+    </section>
+</main>
+
+<!-- Overlay bloqueador -->
+<div id="cookie-overlay" style="display:none">
+    <div id="cookie-banner">
+        <span>
+        Utilizamos cookies para mejorar tu experiencia. Al aceptar, permites el uso de Google Analytics.
+        </span>
+        <div class="cookie-buttons">
+            <button id="accept-cookies">Aceptar</button>
+            <button id="reject-cookies">Rechazar</button>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+<ul class="footer-menu">
+    <li> © 2026, <a href="index.html">Jessica Médium. Todos los derechos reservados.</a></li>
+    <li><a href="politicaPrivacidad.html">Política de privacidad</a></li>
+    <li><a href="avisoLegal.html">Aviso legal</a></li>
+    <li><a href="cookies.html">Politica de Cookies</a></li>
+</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<!-- Redes sociales -->
+<div class="social-icons">
+    <a href="https://www.instagram.com/jesica.oficial11/" target="_blank" aria-label="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@jesica_medium" target="_blank" aria-label="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+    </a>
+    <a href="https://wa.me/34674029411" target="_blank" aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Volver arriba -->
+    <button id="btn-top" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+        </svg>
+    </button>
+</div>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+</script>
+
+<script>
+    const navLinks = document.querySelectorAll('.nav-menu ul li a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
+        this.classList.add('active'); // activa el clicado
+        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        });
+    });
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

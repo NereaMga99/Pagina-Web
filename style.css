@@ -408,8 +408,7 @@ section.cabecera .overlay {
     transition-property: transform, opacity;
 }
 
-/* SECCION LECTURAS TAROT */
-/* SECCION LECTURAS TAROT */
+/* SECCION LECTURAS TAROT Y CURSO DE TAROT */
 body.lecturas-tarot {
     display: flex;
     flex-direction: column;
@@ -432,9 +431,8 @@ body.lecturas-tarot {
     width: 100%;
 }
 
-.tiradasTarot {
+.tarot {
     display: grid;
-    /* Cambiado a auto-fit y tamaño máximo ampliado a 480px para pantallas grandes */
     grid-template-columns: repeat(auto-fit, minmax(320px, 480px));
     justify-content: center;
     gap: 40px;
@@ -1211,7 +1209,7 @@ footer p {
 }
 
 /* LECTURAS TAROT */
-.tiradasTarot {
+.tarot {
     grid-template-columns: 1fr;
     justify-content: stretch;
     gap: 24px;
