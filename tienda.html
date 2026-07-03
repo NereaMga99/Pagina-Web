@@ -12,16 +12,15 @@ sesiones médium, rituales esotéricos, tienda esotérica, velas ritualizadas, a
 sanación energética, conexión con el más allá">
 
 <!-- Meta descripción optimizada -->
-<meta name="description" content="Jessica Medium ofrece sesiones de tarot, mediumnidad y guía espiritual para conectar con seres queridos fallecidos, 
-obtener orientación psíquica y encontrar claridad en tu camino.">
+<meta name="description" content="Tienda esotérica de Jessica Medium. Accesorios, cristales, velas, inciensos, aromaterapia y mucho más para tu práctica espiritual.">
 
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <title>Jessica Medium</title>
-    <link rel="icon" href="favicon.png" type="image/png"> <!-- FAVICON -->
+    <title>Tienda — Jessica Medium</title>
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
-<body>
+<body class="tienda">
 <header>
     <div class="logo-title">
     <a href="index.html">
@@ -30,7 +29,7 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
     </div>
 
     <!-- Botón hamburguesa a la derecha -->
-<button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+    <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
 
     <nav class="nav-menu" aria-label="Menú principal">
         <ul>
@@ -38,31 +37,81 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
             <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
             <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
             <li><a href="rituales.html">Rituales</a></li>
-            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="tienda.html" class="active">Tienda</a></li>
             <li><a href="cursos.html">Cursos</a></li>
             <li><a href="sobreMi.html">Sobre mí</a></li>
         </ul>
     </nav>
 </header>
 
-
-
-
-
-
-
 <!-- Overlay bloqueador -->
-<div id="cookie-overlay" style="display:none">
-    <div id="cookie-banner">
+<div id="jm-consent-overlay" style="display:none">
+    <div id="jm-consent-box">
         <span>
         Utilizamos cookies para mejorar tu experiencia. Al aceptar, permites el uso de Google Analytics.
         </span>
-        <div class="cookie-buttons">
-            <button id="accept-cookies">Aceptar</button>
-            <button id="reject-cookies">Rechazar</button>
+        <div class="jm-consent-actions">
+            <button id="jm-consent-accept">Aceptar</button>
+            <button id="jm-consent-reject">Rechazar</button>
         </div>
     </div>
 </div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+
+    <!-- VISTA 1: CATEGORÍAS PRINCIPALES -->
+    <section id="view-categorias" class="tienda-section">
+        <h1 class="main-title">Nuestra Tienda</h1>
+        <p class="tienda-subtitle">Descubre nuestra colección de productos esotéricos y espirituales</p>
+        <div class="tienda-grid" id="categorias-grid">
+            <!-- Generado por script.js -->
+        </div>
+    </section>
+
+
+    <!-- VISTA 2: SUBCATEGORÍAS (o "Próximamente") -->
+    <section id="view-secundario" class="tienda-section" style="display:none">
+        <div class="tienda-header-nav">
+            <button class="btn-volver-tienda" id="btn-volver" aria-label="Volver a la tienda">
+                ← Volver
+            </button>
+            <h2 class="tienda-section-title" id="section-title"></h2>
+        </div>
+        <div class="tienda-grid" id="secundario-grid">
+            <!-- Generado por script.js -->
+        </div>
+    </section>
+
+
+    <!-- VISTA 3: SUB-SUBCATEGORÍAS -->
+    <section id="view-terciario" class="tienda-section" style="display:none">
+        <div class="tienda-header-nav">
+            <button class="btn-volver-tienda" id="btn-volver-3" aria-label="Volver a la subcategoría">
+                ← Volver
+            </button>
+            <h2 class="tienda-section-title" id="terciario-title"></h2>
+        </div>
+        <div class="tienda-grid" id="terciario-grid">
+            <!-- Generado por script.js -->
+        </div>
+    </section>
+
+
+    <!-- VISTA 4: PRODUCTOS FINALES -->
+    <section id="view-productos" class="tienda-section" style="display:none">
+        <div class="tienda-header-nav">
+            <button class="btn-volver-tienda" id="btn-volver-2" aria-label="Volver a la categoría">
+                ← Volver
+            </button>
+            <h2 class="tienda-section-title" id="productos-title"></h2>
+        </div>
+        <div class="productos-tienda-grid" id="productos-grid">
+            <!-- Generado por script.js -->
+        </div>
+    </section>
+
+</main>
 
 
 <footer>
@@ -114,9 +163,9 @@ obtener orientación psíquica y encontrar claridad en tu camino.">
 
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
-        this.classList.add('active'); // activa el clicado
-        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        navMenu.classList.remove('active');
         });
     });
 </script>
