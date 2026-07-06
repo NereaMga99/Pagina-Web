@@ -1,6 +1,6 @@
 /* script.js — Cookies, Analytics y Tienda */
 
-/* ── ANALYTICS ─────────────────────────────────────────────── */
+/* ANALYTICS */
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 
@@ -15,7 +15,7 @@ function loadAnalytics() {
     } catch(e) {}
 }
 
-/* ── STORAGE con fallback para Brave ───────────────────────── */
+/* STORAGE con fallback para Brave  */
 var _mem = {};
 
 function storageGet(key) {
@@ -31,7 +31,7 @@ function storageSet(key, value) {
     try { sessionStorage.setItem(key, value); } catch(e) {}
 }
 
-/* ── COOKIES + BOTÓN ARRIBA ─────────────────────────────────── */
+/* COOKIES + BOTÓN ARRIBA */
 document.addEventListener('DOMContentLoaded', function () {
 
     if (storageGet('cookiesDecision') === 'accepted') loadAnalytics();
@@ -66,19 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-/* ═══════════════════════════════════════════════════════════
-   TIENDA — Solo activo en tienda.html
-═══════════════════════════════════════════════════════════ */
+/* TIENDA */
 document.addEventListener('DOMContentLoaded', function () {
     if (!document.getElementById('view-categorias')) return;
 
-    /* ── DATOS ─────────────────────────────────────────────────
-       Cada categoría/subcategoría:  { id, nombre, descripcion, imagen }
-       Cada producto:                { nombre, descripcion, imagen, url }
-
-       - imagen → ruta a la foto de portada (relativa a la raíz del sitio)
-       - url    → enlace completo de Shopify al producto
-    ─────────────────────────────────────────────────────────── */
     var CATEGORIAS = [
         {
             id: 'accesorios',
@@ -129,7 +120,16 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 'bolsos',       
             nombre: 'Bolsos, Mochilas y Neceseres',  
             descripcion: 'Lleva contigo la magia a donde vayas.',                    
-            imagen: 'imagenes/tienda/bolsos/bolsos.jpeg'         },
+            imagen: 'imagenes/tienda/bolsos/bolsos.jpeg',
+            subcategorias: [
+                { id: 'bolsas-nepal', nombre: 'Bolsas de Nepal', descripcion: 'Bolsas artesanales llenas de color y autenticidad. Diseños únicos con la esencia mística y el espíritu libre del Himalaya.', imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsosNepal.png' },
+                { id: 'bolsas-fieltro', nombre: 'Bolsas de Fieltro', descripcion: 'Bolsas de textura suave, cálida y resistente. Un accesorio artesanal, cómodo y original para darle un toque creativo a tu día a día.', imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsasFieltro.png' },
+                { id: 'bolsas-canamo', nombre: 'Bolsas de Cáñamo', descripcion: 'Bolsas ecológicas de fibra natural, duraderas y de aire rústico. La opción perfecta para un estilo de vida sostenible, bohemio y consciente.', imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsasCanamo.png' },
+                { id: 'bolsas-flecos', nombre: 'Bolsas de Flecos', descripcion: 'Bolsas de espíritu libre y movimiento desenfadado. El accesorio ideal para aportar dinamismo, textura y un toque boho-chic a cualquier look.', imagen: 'imagenes/tienda/bolsos/bolsasFlecos/bolsosFlecos.png' },
+                { id: 'bolsos-etnicos', nombre: 'Bolsos Étnicos', descripcion: 'Bolsos vibrantes con estampados tradicionales y símbolos cargados de energía. Estilo hippie y relajado con personalidad propia.', imagen: 'imagenes/tienda/bolsos/bolsosEtnicos/bolsosEtnicos.png' },
+                { id: 'bolsas-jacquard', nombre: 'Bolsas Jacquard', descripcion: 'Bolsas de tejido geométrico resistente y de aire bohemio-urbano. Espaciosas, juveniles y perfectas para el ritmo de tu rutina.', imagen: 'imagenes/tienda/bolsos/bolsosJacquard/bolsosJacquard.png' },
+                { id: 'bolsos-asa-piel', nombre: 'Bolsas con Asa de Piel', descripcion: 'Bolsas de base natural que combinan la calidez textil con la elegancia y resistencia de las asas de piel. Estilo orgánico y atemporal.', imagen: 'imagenes/tienda/bolsos/bolsosAsaPiel/bolsosAsaPiel.png' }
+            ]   },
 
         { 
             id: 'cristales',    
@@ -180,10 +180,6 @@ document.addEventListener('DOMContentLoaded', function () {
             imagen: 'imagenes/tienda/velas/velas.jpeg'          }
     ];
 
-    /*
-       Rellena cada 'imagen' con la ruta de la foto
-       y cada 'url' con el enlace de Shopify del producto.
-    */
     var PRODUCTOS = {
         'pulseras-energia': [
             { nombre: 'Brazalete de Energía — Piedra de los Chakras',       descripcion: 'Lleva contigo la armonía de los 7 chakras y transforma tu día.', imagen: 'imagenes/tienda/accesorios/pulseras/pulseraChakras.png',     url: 'https://ai6mq0-4x.myshopify.com/es/products/pulsera-poder-piedras-de-los-chakras776' },
@@ -305,12 +301,80 @@ document.addEventListener('DOMContentLoaded', function () {
             { nombre: 'Rodillo Facial de Piedras Preciosas - Cuarzo Rosa',     descripcion: 'Este rodillo de cuarzo rosa con sodalita está diseñado para masajear la mandíbula, reducir la hinchazón y activar la circulación. Además, relaja los músculos faciales mientras equilibra tus emociones y libera el estrés.',    imagen: 'imagenes/tienda/banoYCuerpo/rodillosFaciales/rodilloMandibulaCuarzoRosa.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/rodillo-facial-de-piedras-preciosas-cuarzo-rosa932' },
             { nombre: 'Rodillo Facial de Piedras Preciosas - Amatista',     descripcion: 'Este rodillo de amatista con sodalita está diseñado para masajear la mandíbula, reducir la hinchazón y activar la circulación del rostro. Gracias a las propiedades de la amatista, aporta un efecto calmante que equilibra las emociones y alivia el estrés.',    imagen: 'imagenes/tienda/banoYCuerpo/rodillosFaciales/rodilloMandibulaAmatista.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/rodillo-facial-de-piedras-preciosas-amatista929' },
         ],
+
+        'bolsas-nepal' : [
+            { nombre: 'Bolsa bandolera Nepal - Verano en la playa',     descripcion: 'Esta bolsa bandolera "Nepal - Verano en la playa" combina un estilo artesanal con tonos verdes y ocres perfectos para el verano. Cómoda, práctica y con un toque desenfadado, es ideal para llevar tus esenciales a la playa o en tus paseos.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bandoleraVerano.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-bandolera-nepal-verano-en-la-playa303' },
+            { nombre: 'Bolsa bandolera Nepal - Azul marino',     descripcion: 'Esta bolsa bandolera "Nepal - Azul marino" destaca por su diseño artesanal de rayas en tonos azules y morados. Cómoda, práctica y con un estilo desenfadado, es el accesorio perfecto para llevar tus esenciales en tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaAzulMarino.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-bandolera-nepal-azul-marino338' },
+            { nombre: 'Bolsa bandolera Nepal - Montaña Trek Tan & Verdes',     descripcion: 'Esta bolsa bandolera artesanal, con sus características rayas en burdeos, verde y ocre, es la compañera perfecta para tu día a día o tus aventuras. Su diseño rústico y práctico te ofrece comodidad y estilo sin esfuerzo.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaMontaniaTrekTan.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-bandolera-nepal-montana-trek-tan-verdes335' },
+            { nombre: 'Bolsa bandolera Nepal -Prados de primavera Verde y Azul',     descripcion: 'Esta bolsa bandolera destaca por su diseño artesanal con rayas en tonos azul turquesa y verde. Cómoda, práctica y con un estilo fresco y desenfadado, es el accesorio ideal para llevar tus esenciales a la playa, de paseo o en tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaPradosPrimavera.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-bandolera-nepal-prados-de-primavera-verde-y-azul249' },
+            { nombre: 'Bolso Bandolera Nepal (Correa Ajustable) - Azul de las Profundidades del Mar',     descripcion: 'Esta bolsa bandolera "Nepal - Azul de las Profundidades del Mar" cuenta con un diseño artesanal y correa ajustable. Práctica, cómoda y en tonos azules profundos, es ideal para llevar tus esenciales a diario con un toque desenfadado.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaAzulProfundidades.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-bandolera-nepal-correa-ajustable-azul-de-las-profundidades-del-mar236' },
+            { nombre: 'Bolso Bandolera Nepal (Correa Ajustable) - Primavera Meadows Verde y Azul',     descripcion: 'Esta bolsa bandolera "Nepal - Primavera Meadows Verde y Azul" cuenta con un diseño artesanal y correa ajustable. Práctica, cómoda y con rayas en frescos tonos verdes y azules, es ideal para llevar tus esenciales a diario con un toque desenfadado.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaPrimaveraMeadows.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-bandolera-nepal-correa-ajustable-primavera-meadows-verde-y-azul325' },
+            { nombre: 'Bolso Bandolera Nepal (Correa Ajustable) - Rojos del atardecer',     descripcion: 'Esta bolsa bandolera "Nepal - Rojos del atardecer" cuenta con un diseño artesanal y correa ajustable. Práctica, cómoda y con rayas en cálidos tonos rojos inspirados en el ocaso, es ideal para llevar tus esenciales a diario con un toque desenfadado.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaRojosAtardecer.png',      url: 'http://ai6mq0-4x.myshopify.com/es/products/bolso-bandolera-nepal-correa-ajustable-rojos-del-atardecer332' },
+            { nombre: 'Bolso bandolera Nepal - Flores silvestres',     descripcion: 'Esta bolsa bandolera "Nepal - Flores silvestres" destaca por su estilo artesanal con un diseño inspirado en la naturaleza. Cómoda, práctica y con un toque fresco y desenfadado, es el accesorio ideal para llevar tus esenciales en tu día a día o en tus paseos.',    imagen: 'imagenes/tienda/bolsos/bolsosNepal/bolsaFloresSilvestres.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/nepal-sling-bag-wild-flowers289' },
+        ],
+
+        'bolsas-fieltro' : [
+            { nombre: 'Bolsa de abejas de fieltro al agua - Un asa con imán - Naranja amanecer',     descripcion: 'Esta bolsa de fieltro al agua "Abejas - Naranja amanecer" cuenta con un diseño artesanal, un asa cómoda y un práctico cierre de imán. Ligera, original y con un vibrante color naranja, es ideal para llevar tus esenciales a diario con un toque alegre y natural.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaNaranja.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-abejas-de-fieltro-al-agua-un-asa-con-iman-naranja-amanecer306' },
+            { nombre: 'Bolsa de abejas de fieltro al agua - Un asa con imán - Tonos Verdes',     descripcion: 'Esta bolsa de fieltro al agua "Abejas - Tonos Verdes" cuenta con un diseño artesanal, un asa cómoda y un práctico cierre de imán. Ligera, original y con frescos matices verdes, es ideal para llevar tus esenciales a diario con un toque alegre y natural.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaVerde.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-abejas-de-fieltro-al-agua-un-asa-con-iman-tonos-verdes354' },
+            { nombre: 'Bolsa de fieltro para abejas - Un asa con imán - Azul y verde',     descripcion: 'Bolsa artesanal de fieltro con un original diseño de abejas en tonos azul y verde. Ligera, eco-friendly y con un práctico cierre de imán, es perfecta para darle un toque alegre y natural a tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaAzul.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-fieltro-para-abejas-un-asa-con-iman-azul-y-verde190' },
+            { nombre: 'Bolso de abejas de fieltro al agua - Un asa con imán - Tonos lavanda',     descripcion: 'Bolsa artesanal de fieltro al agua con un original diseño de abejas en tonos lavanda. Ligera, eco-friendly y con un práctico cierre de imán, es perfecta para darle un toque delicado, relajante y único a tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaLavanda.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-de-abejas-de-fieltro-al-agua-un-asa-con-iman-tonos-lavanda216' },
+            { nombre: 'Bolsa de fieltro con forma de árbol y colmena - 35 x 27 cm',     descripcion: 'Bolsa artesanal de fieltro con un original diseño de árbol y colmena en un tamaño de 35 x 27 cm. Ligera, eco-friendly y espaciosa, es perfecta para darle un toque creativo, natural y único a tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaArbolColmena.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-fieltro-con-forma-de-arbol-y-colmena-35-x-27-cm293' },
+            { nombre: 'Bolsa de fieltro para jardín de hadas - 35 x 27 cm',     descripcion: 'Bolsa artesanal de fieltro con un encantador diseño de jardín de hadas en un tamaño de 35 x 27 cm. Ligera, eco-friendly y espaciosa, es perfecta para añadir un toque de magia, fantasía y originalidad a tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaJardinHadas.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-fieltro-para-jardin-de-hadas-35-x-27-cm350' },
+            { nombre: 'Bolsa de fieltro para jardín de setas - 35 x 27 cm',     descripcion: 'Bolsa artesanal de fieltro con un colorido diseño de jardín de setas en un tamaño de 35 x 27 cm. Ligera, eco-friendly y espaciosa, es perfecta para añadir un toque de bosque, fantasía y originalidad a tu día a día.',    imagen: 'imagenes/tienda/bolsos/bolsasFieltro/bolsaSetas.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-fieltro-para-jardin-de-setas-35-x-27-cm297' },
+        ],
+
+        'bolsas-canamo' : [
+            { nombre: 'Bolsa de cuerda de cáñamo Tiedye',     descripcion: 'Bolsa artesanal de cuerda de cáñamo con un vibrante y psicodélico diseño *tie-dye*. Súper resistente, ecológica y de espíritu libre, es el accesorio ideal para llevar a la playa, a festivales o para darle un rollazo bohemio y lleno de color a tus días.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsaCuerdaTiedye.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-cuerda-de-canamo-tiedye213' },
+            { nombre: 'Bolsa de estudio de cáñamo Tiedye con bolsillo frontal',     descripcion: 'Bolsa de estudio artesanal de cáñamo con un vibrante diseño *tie-dye* y un práctico bolsillo frontal para tus imprescindibles. Ecológica, resistente y de estilo bohemio, es perfecta para llevar tus apuntes, libros o portátil a clase con una energía súper libre y original.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsaEstudioTiedye.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolsa-de-estudio-de-canamo-tiedye-con-bolsillo-frontal196' },
+            { nombre: 'Bolso bandolera de cáñamo teñido con 2 cremalleras y solapa',     descripcion: 'Bolso bandolera de cáñamo con un llamativo diseño teñido, doble cremallera y solapa para mantener todo seguro y organizado. Compacto, ecológico y súper resistente, es el complemento de estilo urbano y alternativo ideal para moverte con comodidad en tus planes diarios.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsaBandolera.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-bandolera-de-canamo-tenido-con-2-cremalleras-y-solapa187' },
+            { nombre: 'Bolso bandolera de cáñamo teñido con 1 cremallera',     descripcion: 'Bolso bandolera de cáñamo con un llamativo diseño teñido y una práctica cremallera principal para un acceso rápido y seguro. Súper ligero, ecológico y de aire alternativo, es el accesorio minimalista ideal para llevar lo justo y moverte con total libertad.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsaBandolera1Cremallera.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-bandolera-de-canamo-tenido-con-1-cremallera272' },
+            { nombre: 'Mochila grande de cáñamo Tiedye - Mandala',     descripcion: 'Mochila grande de cáñamo con un llamativo estampado *tie-dye* y un diseño central de mandala. Espaciosa, ecológica y muy resistente, es el accesorio perfecto para tus viajes, festivales o el día a día con un estilo bohemio, místico y lleno de energía.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/mochilaMandala.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/mochila-grande-de-canamo-tiedye-mandala275' },
+            { nombre: 'Mochila mediana de cáñamo Tiedye - 7 chakras',     descripcion: 'Mochila mediana de cáñamo con un colorido estampado *tie-dye* y los símbolos de los 7 chakras. Cómoda, ecológica y resistente, es perfecta para tu rutina con un estilo espiritual, alternativo y lleno de buena energía.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/mochilaChakras.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/mochila-mediana-de-canamo-tiedye-7-chakras206' },
+            { nombre: 'Mochila mediana de cáñamo Tiedye sin estampado',     descripcion: 'Mochila mediana de cáñamo con un colorido estampado *tie-dye* sin dibujos añadidos. Cómoda, ecológica y compacta, es ideal para tu día a día si buscas un diseño alternativo y vibrante que deje todo el protagonismo a los matices del teñido.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/mochilaSinEstampado.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/mochila-mediana-de-canamo-tiedye-sin-estampado255' },
+            { nombre: 'Mochila enrollable Trekking de cáñamo - Salvia',     descripcion: 'Mochila de trekking enrollable en cáñamo verde salvia. Duradera, ecológica y con capacidad adaptable, es ideal para tus aventuras o el día a día con un estilo sostenible y aventurero.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/mochilaSalvia.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/mochila-enrollable-trekking-de-canamo-salvia281' },
+            { nombre: 'Bolso para Portátil Soft Banjar - Rosa',     descripcion: 'Bolso para portátil acolchado con el exótico diseño de la tela *Soft Banjar* en un vibrante tono rosa. Ligero, suave y con un estilo étnico inconfundible, es ideal para proteger tu tecnología con un toque chic, alegre y lleno de personalidad vayas donde vayas.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsaPortatil.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-para-portatil-soft-banjar-rosa319' },
+            { nombre: 'Bolso para Portátil Soft Banjar - Elegante Oscuro',     descripcion: 'Bolso para portátil acolchado con el exótico diseño de la tela *Soft Banjar* en un sofisticado tono elegante oscuro. Combina una protección suave y ligera para tu tecnología con un estilo étnico sobrio, refinado y lleno de personalidad para tu entorno profesional o diario.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bolsaPortatilOscuro.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-para-portatil-soft-banjar-elegante-oscuro285' },
+            { nombre: 'Riñonera de cáñamo Tiedye',     descripcion: 'Riñonera de cáñamo con un vibrante estampado *tie-dye*. Cómoda, ecológica y compacta, es el accesorio de estilo alternativo ideal para llevar tus imprescindibles con total libertad y un toque de color único en tu día a día o festivales.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bandoleraNormal.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/rinonera-de-canamo-tiedye223' },
+            { nombre: 'Bolso Tipo Cinturón de Estilo Cáñamo y Algodón (o Riñonera) - Azul',     descripcion: 'Riñonera artesanal de cáñamo y algodón en color azul. Cómoda, resistente y ecológica, es el accesorio de estilo bohemio ideal para llevar tus imprescindibles con total libertad en tu día a día o festivales.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bandoleraAzul.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-tipo-cinturon-de-estilo-canamo-y-algodon-o-rinonera-azul269' },
+            { nombre: 'Bolso Tipo Cinturón de Estilo Cáñamo y Algodón (o Riñonera) - Salvia',     descripcion: 'Riñonera artesanal de cáñamo y algodón en un tono verde salvia. Cómoda, resistente y ecológica, es el accesorio de estilo bohemio ideal para llevar tus imprescindibles con total libertad en tu día a día o festivales..',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bandoleraSalvia.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-tipo-cinturon-de-estilo-canamo-y-algodon-o-rinonera-salvia245' },
+            { nombre: 'Bolso Tipo Cinturón de Estilo Cáñamo y Algodón (o Riñonera) - Vino',     descripcion: 'Riñonera artesanal de cáñamo y algodón en un profundo tono rojo vino. Cómoda, resistente y ecológica, es el accesorio de estilo bohemio ideal para llevar tus imprescindibles con total libertad en tu día a día o festivales.',    imagen: 'imagenes/tienda/bolsos/bolsasCanamo/bandoleraVino.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-tipo-cinturon-de-estilo-canamo-y-algodon-o-rinonera-vino278' },
+        ],
+
+        'bolsas-flecos' : [
+            { nombre: 'Bolso con flecos - Estampado de Elefante',     descripcion: 'Bolso de hombro con flecos y un original estampado de elefantes. De aire desenfadado y bohemio, combina el movimiento de sus flecos con un diseño étnico encantador, siendo el complemento perfecto para darle un toque divertido y único a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsasFlecos/bolsaElefantes.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-con-flecos-estampado-de-elefante312' },
+            { nombre: 'Bolso con flecos - Hamsa',     descripcion: 'Bolso con flecos y el místico símbolo de la mano de Hamsa. De aire bohemio y protector, es el complemento perfecto para añadir personalidad y un toque espiritual único a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsasFlecos/bolsoHamsa.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-con-flecos-hamsa265' },
+            { nombre: 'Bolso con flecos - Bordado De Patrón De Verano',     descripcion: 'Bolso con flecos decorado con un fresco y colorido bordado de patrón de verano. De aire bohemio y desenfadado, es el accesorio ideal para aportar frescura, movimiento y un toque artesanal y vibrante a tus looks en los días más soleados.',    imagen: 'imagenes/tienda/bolsos/bolsasFlecos/bolsoPatronVerano.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-con-flecos-bordado-de-patron-de-verano328' },
+            { nombre: 'Bolso con flecos - Bordado Elefante',     descripcion: 'Bolso con flecos decorado con un detallado bordado de elefante. De aire bohemio y artesanal, combina el movimiento de sus flecos con la esencia étnica de su diseño, siendo ideal para añadir textura, personalidad y un toque único a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsasFlecos/bolsoBordadoElefante.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-con-flecos-bordado-elefante341' },
+            { nombre: 'Bolso con flecos - Bordado Mandela',     descripcion: 'Bolso con flecos decorado con un detallado bordado de mandala. De aire bohemio y espiritual, combina el movimiento de sus flecos con un diseño místico y simétrico, siendo el accesorio ideal para aportar armonía, textura y un toque artístico a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsasFlecos/bolsoMandala.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-con-flecos-bordado-mandela226' },
+        ],
+
+        'bolsos-etnicos' : [
+            { nombre: 'Bolso Étnico Estilo Hippie - Arena / paz',     descripcion: 'Bolso étnico de estilo hippie en tono arena con el clásico símbolo de la paz. Cómodo, ligero y de aire desenfadado, es el accesorio ideal para quienes buscan un look relajado, bohemio y con un mensaje positivo en su día a día.',    imagen: 'imagenes/tienda/bolsos/bolsosEtnicos/bolsoPeace.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-etnico-estilo-hippie-arena-paz200' },
+            { nombre: 'Bolso Étnico Estilo Hippie - Chocolate / Elefante',     descripcion: 'Bolso étnico de estilo hippie en tono chocolate con un encantador diseño de elefante. De aire rústico, relajado y bohemio, es un accesorio cómodo y con personalidad, ideal para llevar tus esenciales diarios con un toque de esencia artesanal y mística.',    imagen: 'imagenes/tienda/bolsos/bolsosEtnicos/bolsoChocolateElefante.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-etnico-estilo-hippie-chocolate-elefante322' },
+            { nombre: 'Bolso Étnico Estilo Hippie - Púrpura / espiral',     descripcion: 'Bolso étnico de estilo hippie en tono púrpura con un llamativo diseño de espiral. De aire psicodélico, relajado y bohemio, es un accesorio vibrante y cómodo, ideal para llenar de color, energía y magnetismo tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsosEtnicos/bolsoEspiral.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-etnico-estilo-hippie-purpura-espiral252' },
+            { nombre: 'Bolso Étnico Estilo Hippie - Teal / Om',     descripcion: 'Bolso étnico de estilo hippie en tono *teal* (azul verdoso) con el sagrado símbolo del Om. De aire sereno, místico y bohemio, es un accesorio cómodo y relajado, ideal para aportar un toque de paz, espiritualidad y un color vibrante a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsosEtnicos/bolsoOm.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-etnico-estilo-hippie-teal-om232' },
+        ],
+
+        'bolsas-jacquard' : [
+            { nombre: 'Bolso Jacquard - Bolso Estudiantil Rosa',     descripcion: 'Bolso estudiantil de tejido jacquard en tonos rosas. Con un diseño resistente, espacioso y de aire bohemio-urbano, es el accesorio ideal para llevar tus cuadernos o esenciales del día a día con total comodidad y un toque de estilo retro, alegre y juvenil.',    imagen: 'imagenes/tienda/bolsos/bolsosJacquard/bolsoEstudiantilRosa.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-jacquard-bolso-estudiantil-rosa242' },
+            { nombre: 'Bolso Jacquard - Bolso Estudiantil Verde Azulado',     descripcion: 'Bolso estudiantil de tejido jacquard en un atractivo tono verde azulado. Con un diseño resistente, espacioso y de aire bohemio-urbano, es el accesorio ideal para llevar tus cuadernos o esenciales del día a día con total comodidad y un toque de estilo retro, fresco y versátil.',    imagen: 'imagenes/tienda/bolsos/bolsosJacquard/bolsoEstudiantilVerdeAzulado.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-jacquard-bolso-estudiantil-verde-azulado300' },
+            { nombre: 'Tejido Jacquard - Mochila peq. Rosada',     descripcion: 'Mochila pequeña de tejido jacquard en tonos rosados. Compacta, resistente y de aire bohemio, es el accesorio ideal para moverte con total libertad en tu día a día, aportando un toque sutil de color, estilo retro y practicidad a tus looks más casuales.',    imagen: 'imagenes/tienda/bolsos/bolsosJacquard/mochilaPeqRosada.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/tejido-jacquard-mochila-peq-rosada259' },
+            { nombre: 'Tejido Jacquard - Mochila peq. Teal',     descripcion: 'Mochila pequeña de tejido jacquard en un vibrante tono *teal* (azul verdoso). Compacta, resistente y de aire bohemio, es el accesorio ideal para moverte con total libertad en tu día a día, aportando frescura, practicidad y un toque de estilo retro a tus looks más casuales.',    imagen: 'imagenes/tienda/bolsos/bolsosJacquard/mochilaPeqTeal.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/tejido-jacquard-mochila-peq-teal316' },
+            { nombre: 'Tejido Jacquard - Mochila Rosada Grande',     descripcion: 'Mochila pequeña de tejido jacquard en un vibrante tono *teal* (azul verdoso). Compacta, resistente y de aire bohemio, es el accesorio ideal para moverte con total libertad en tu día a día, aportando frescura, practicidad y un toque de estilo retro a tus looks más casuales.',    imagen: 'imagenes/tienda/bolsos/bolsosJacquard/mochilaRosada.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/tejido-jacquard-mochila-rosada229' },
+            { nombre: 'Tejido Jacquard - Mochila Teal Grande',     descripcion: 'Mochila pequeña de tejido jacquard en un vibrante tono *teal* (azul verdoso). Compacta, resistente y de aire bohemio, es el accesorio ideal para moverte con total libertad en tu día a día, aportando frescura, practicidad y un toque de estilo retro a tus looks más casuales.',    imagen: 'imagenes/tienda/bolsos/bolsosJacquard/mochilaTeal.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/tejido-jacquard-mochila-teal309' },
+        ],
+
+        'bolsos-asa-piel' : [
+            { nombre: 'Bolso Natural Asa de Piel - Flor de la Vida',     descripcion: 'Bolso natural con asas de piel y el símbolo de la Flor de la Vida. De aire orgánico, místico y elegante, es el accesorio ideal para aportar armonía, resistencia y un toque espiritual único a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsosAsaPiel/bolsoFlorVida.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-natural-asa-de-piel-flor-de-la-vida344' },
+            { nombre: 'Bolso Natural Asa de Piel - Inspiración',     descripcion: 'Bolso natural con asas de piel y un diseño de libre inspiración. De aire orgánico, artesanal y elegante, es el accesorio ideal para aportar calidez, resistencia y un toque de originalidad único a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsosAsaPiel/bolsoInspiracion.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-natural-asa-de-piel-inspiracion347' },
+            { nombre: 'Bolso Natural Asa de piel - Mandela',     descripcion: 'Bolso natural con asas de piel y un detallado diseño de mandala. De aire orgánico, espiritual y elegante, es el accesorio ideal para aportar armonía, resistencia y un toque artístico único a tus looks diarios.',    imagen: 'imagenes/tienda/bolsos/bolsosAsaPiel/bolsoMandala.png',      url: 'https://ai6mq0-4x.myshopify.com/es/products/bolso-natural-asa-de-piel-mandela209' },
+        ],
     };
 
-    /* ── ESTADO ─────────────────────────────────────────────── */
+    /* ESTADO  */
     var nav = { nivel: 'categorias', cat: null, sub: null, subsub: null };
 
-    /* ── HELPERS ─────────────────────────────────────────────── */
+    /* HELPERS  */
 
     /* Muestra una vista y oculta las otras */
     function mostrarVista(id) {
@@ -330,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 + '<div class="categoria-info">'
                 + '<h3 class="categoria-nombre">' + item.nombre + '</h3>'
                 + '<p class="categoria-desc">' + item.descripcion + '</p>'
+                + '<span class="btn-ver-todos">Ver todos</span>'
                 + '</div></div>';
     }
 
@@ -365,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarVista('view-productos');
     }
 
-    /* ── NAVEGACIÓN ─────────────────────────────────────────── */
+    /* NAVEGACIÓN */
 
     /* Vista inicial: todas las categorías */
     document.getElementById('categorias-grid').innerHTML =

@@ -931,7 +931,27 @@ body.tienda {
     line-height: 1.45;
     margin: 0;
 }
- 
+
+.btn-ver-todos {
+    display: inline-block;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #d4af37, #7c5c2e);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: 'Georgia', serif;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 12px rgba(180, 140, 30, 0.28);
+}
+
+.categoria-card:hover .btn-ver-todos {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(180, 140, 30, 0.42);
+}
+
 /* --- GRID DE PRODUCTOS --- */
 .productos-tienda-grid {
     display: flex;
@@ -1714,7 +1734,7 @@ footer p {
 }
 
 .categoria-desc {
-    font-size: 0.74rem;
+    font-size: 0.90rem;
 }
 
 .cat-icono {
@@ -1795,9 +1815,15 @@ footer p {
     .categoria-nombre {
         font-size: 1rem;
     }
- 
+
     .categoria-desc {
-        display: none; 
+        display: none;
+    }
+
+    .btn-ver-todos {
+        font-size: 0.68rem;
+        padding: 5px 14px;
+        margin-top: 8px;
     }
  
     /* Productos: una columna para dar espacio al texto */
@@ -1819,7 +1845,7 @@ footer p {
     }
  
     .producto-tienda-desc {
-        font-size: 0.85rem;
+        font-size: 0.90rem;
     }
  
     .btn-comprar-tienda {
