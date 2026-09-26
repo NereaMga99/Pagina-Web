@@ -38,8 +38,6 @@ sanación energética, conexión con el más allá">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="lecturasTarot.html">Lecturas de Tarot</a></li>
             <li><a href="sesionesMedium.html">Sesiones Médium</a></li>
-            <li><a href="rituales.html">Rituales</a></li>
-            <li><a href="tienda.html">Tienda</a></li>
             <li><a href="cursos.html">Cursos</a></li>
             <li><a href="sobreMi.html">Sobre mí</a></li>
         </ul>
@@ -58,6 +56,24 @@ sanación energética, conexión con el más allá">
                 <h3>Lectura Tarot, 1 pregunta</h3>
                 <p>Puedes adquirir tantas preguntas como necesites. Cada pregunta será respondida de forma individual y detallada para ofrecerte la mayor orientación posible.</p>
                 <span class="precio">5€</span>
+            </article>
+
+            <article class="pregunta-1">
+                <a href="https://ai6mq0-4x.myshopify.com/es/products/llamada-15-minutos">
+                    <img src="imagenes/tiradasTarot/pregunta15min.jpeg" alt="1 pregunta de tarot"/>
+                </a>
+                <h3>Lectura Tarot Telefónica de 15 minutos, 1 pregunta</h3>
+                <p>Esta llamada es para preguntas concretas, no para una lectura general. Si nos queda tiempo, podrás hacer otra pregunta hasta completar los 15 minutos.</p>
+                <span class="precio">15€</span>
+            </article>
+
+            <article class="pregunta-1">
+                <a href="https://ai6mq0-4x.myshopify.com/es/products/llamada-tarot-30-minutos">
+                    <img src="imagenes/tiradasTarot/pregunta30min.jpeg" alt="1 pregunta de tarot"/>
+                </a>
+                <h3>Lectura Tarot Telefónica de 30 minutos</h3>
+                <p>Esta llamada es para preguntas específicas sobre un tema, no para una lectura general. Si nos queda tiempo, podrás hacer otras preguntas hasta completar los 30 minutos.</p>
+                <span class="precio">25€</span>
             </article>
         </div>
     </section>
@@ -112,9 +128,9 @@ sanación energética, conexión con el más allá">
 
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active')); // quita activo a todos
-        this.classList.add('active'); // activa el clicado
-        navMenu.classList.remove('active'); // opcional: cerrar menú tras clic
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active'); 
+        navMenu.classList.remove('active'); 
         });
     });
 </script>

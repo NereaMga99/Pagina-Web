@@ -415,13 +415,7 @@ body.lecturas-tarot {
     display: flex;
     flex-direction: column;
 }
-
-/* SECCION TIENDA */
-body.tienda {
-    display: flex;
-    flex-direction: column;
-}
-
+ 
 .main-title {
     font-size: 2.5rem;
     font-family: serif;
@@ -430,7 +424,7 @@ body.tienda {
     margin: 40px 10px 30px;
     padding-top: 10px;
 }
-
+ 
 .productos {
     max-width: 1300px;
     margin: 0 auto;
@@ -438,13 +432,24 @@ body.tienda {
     box-sizing: border-box;
     width: 100%;
 }
-
+ 
 .tarot {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 480px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
     justify-content: center;
     gap: 40px;
     margin-bottom: 60px;
+}
+
+/* Si hay 3 o más tarjetas, se fuerzan 3 columnas iguales lado a lado */
+.tarot:has(article:nth-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1000px) {
+    .tarot:has(article:nth-child(3)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .productos article {
@@ -666,438 +671,6 @@ body.tienda {
     transform: translateY(-2px);
 }
 
-/* RITUALES */
-/* pestaña de los rituales */
-.rituales-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 0 auto 40px;
-    max-width: 700px;
-}
-
-.tab-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
-    border: 2px solid #ab9a1c;
-    border-radius: 50px;
-    background-color: #fff;
-    color: #5d3a3a;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.tab-btn:hover {
-    background-color: #f5e9c3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-}
-
-.tab-btn.active {
-    background: linear-gradient(135deg, #d4af37, #7c5c2e);
-    color: #fff;
-    border-color: transparent;
-    box-shadow: 0 6px 18px rgba(180, 140, 30, 0.35);
-}
-
-.tab-icon {
-    font-size: 1.1rem;
-}
-
-.tab-panel {
-    display: none;
-}
-
-.tab-panel.active {
-    display: block;
-}
-
-.content-page-rituales {
-    padding: 20px;
-    background-color: #fffef8;
-}
-
-/* Contenedor de artículos */
-.rituales {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-    gap: 40px;
-}
-
-.container-rituales {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
-}
-
-/* Espaciado adicional opcional */
-.mb-20 {
-    margin-bottom: 35px;
-}
-
-/* Estilo común para todos los artículos */
-.box-ritual1,
-.box-ritual2,
-.box-ritual3,
-.box-ritual4,
-.box-ritual5 {
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    max-width: 300px;
-    flex: 1 1 280px;
-}
-
-.box-ritual1:hover,
-.box-ritual2:hover,
-.box-ritual3:hover,
-.box-ritual4:hover,
-.box-ritual5:hover {
-    transform: translateY(-5px);
-}
-
-/* Imágenes */
-.box-ritual1 img,
-.box-ritual2 img,
-.box-ritual3 img,
-.box-ritual4 img,
-.box-ritual5 img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-/* Texto dentro de cada tarjeta */
-.text-rituales {
-    padding: 20px;
-    text-align: center;
-}
-
-.text-rituales p {
-    margin: 6px 0;
-    font-size: 1.1rem;
-}
-
-/* SECCION TIENDA */
-/* ===================================================
-   TIENDA — ESTILOS ESPECÍFICOS
-=================================================== */
- 
-/* --- SECCIÓN TIENDA (contenedor general) --- */
-.tienda-section {
-    max-width: 1260px;
-    margin: 0 auto;
-    padding: 40px 24px 70px;
-}
- 
-.tienda-subtitle {
-    text-align: center;
-    color: #7c5c2e;
-    font-size: 1.05rem;
-    margin: -20px 0 40px;
-}
- 
-/* --- CABECERA DE SECCIÓN SECUNDARIA (botón volver + título) --- */
-.tienda-header-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 36px;
-}
-
-.tienda-section-title {
-    font-size: 2rem;
-    color: #5d3a3a;
-    margin: 0;
-}
-
-/* --- BOTÓN VOLVER --- */
-.btn-volver-tienda {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: 2px solid #ab9a1c;
-    color: #5d3a3a;
-    padding: 8px 22px;
-    border-radius: 50px;
-    font-family: 'Georgia', serif;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.2s ease;
-    white-space: nowrap;
-}
-
-.btn-volver-tienda:hover {
-    background-color: #f5e9c3;
-    transform: translateY(-50%) translateX(-3px);
-}
- 
-/* --- GRID DE CATEGORÍAS / SUBCATEGORÍAS --- */
-.tienda-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-}
-
-/* --- TARJETA DE CATEGORÍA --- */
-.categoria-card {
-    flex: 1 1 190px;
-    max-width: 220px;
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid rgba(171, 154, 28, 0.18);
-}
- 
-.categoria-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(171, 154, 28, 0.22);
-}
- 
-/* Zona de imagen cuadrada 1:1 — reemplaza el placeholder con <img> cuando tengas fotos */
-.categoria-img-wrap {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    position: relative;
-}
- 
-.categoria-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
- 
-.categoria-card:hover .categoria-img-wrap img {
-    transform: scale(1.05);
-}
- 
-/* Placeholder mientras no hay foto */
-.categoria-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #f5e9c3 0%, #ede0c5 55%, #e0cfa0 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
-.cat-icono {
-    font-size: 3rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
-    transition: transform 0.3s ease;
-}
- 
-.categoria-card:hover .cat-icono {
-    transform: scale(1.12);
-}
- 
-/* Texto de la tarjeta */
-.categoria-info {
-    padding: 13px 15px 17px;
-    text-align: center;
-}
- 
-.categoria-nombre {
-    font-size: 0.97rem;
-    font-weight: 700;
-    color: #402218;
-    margin: 0 0 5px;
-    line-height: 1.3;
-}
- 
-.categoria-desc {
-    font-size: 0.80rem;
-    color: #7c6a5e;
-    line-height: 1.45;
-    margin: 0;
-}
-
-.btn-ver-todos {
-    display: inline-block;
-    margin-top: 12px;
-    background: linear-gradient(135deg, #d4af37, #7c5c2e);
-    color: #fff;
-    padding: 6px 18px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.78rem;
-    font-weight: 600;
-    font-family: 'Georgia', serif;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 4px 12px rgba(180, 140, 30, 0.28);
-}
-
-.categoria-card:hover .btn-ver-todos {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(180, 140, 30, 0.42);
-}
-
-/* --- GRID DE PRODUCTOS --- */
-.productos-tienda-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 26px;
-}
-
-/* --- TARJETA DE PRODUCTO --- */
-.producto-tienda-card {
-    flex: 1 1 210px;
-    max-width: 240px;
-    background: #ffffff;
-    border: 2px solid #ab9a1c;
-    border-radius: 14px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    display: flex;
-    flex-direction: column;
-}
- 
-.producto-tienda-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(171, 154, 28, 0.22);
-}
- 
-/* Zona de imagen del producto (cuadrado 1:1) */
-.producto-img-wrap {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(135deg, #faf0dc 0%, #f0e3c0 100%);
-}
- 
-.producto-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
- 
-.producto-tienda-card:hover .producto-img-wrap img {
-    transform: scale(1.05);
-}
- 
-.producto-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
-.prod-icono {
-    font-size: 3.5rem;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
-    transition: transform 0.3s ease;
-}
- 
-.producto-tienda-card:hover .prod-icono {
-    transform: scale(1.1);
-}
- 
-/* Texto del producto */
-.producto-tienda-info {
-    padding: 16px 14px 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
- 
-.producto-tienda-nombre {
-    font-size: 0.97rem;
-    font-weight: 700;
-    color: #402218;
-    margin: 0 0 8px;
-    line-height: 1.35;
-}
- 
-.producto-tienda-desc {
-    font-size: 0.82rem;
-    color: #7c6a5e;
-    line-height: 1.45;
-    margin: 0 0 16px;
-    flex: 1;
-}
- 
-/* Botón comprar */
-.btn-comprar-tienda {
-    display: inline-block;
-    background: linear-gradient(135deg, #d4af37, #7c5c2e);
-    color: #fff;
-    padding: 10px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 600;
-    font-family: 'Georgia', serif;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 4px 12px rgba(180, 140, 30, 0.28);
-    align-self: center;
-}
- 
-.btn-comprar-tienda:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(180, 140, 30, 0.42);
-}
- 
-/* --- MENSAJE PRÓXIMAMENTE --- */
-.pronto-contenedor {
-    flex-basis: 100%;
-    max-width: 100%;
-    text-align: center;
-    padding: 70px 30px;
-    background: #fff;
-    border-radius: 20px;
-    border: 2px dashed #d4af37;
-}
- 
-.pronto-icono {
-    font-size: 4.5rem;
-    display: block;
-    margin-bottom: 18px;
-    animation: flotarIcono 3s ease-in-out infinite;
-}
- 
-@keyframes flotarIcono {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-8px); }
-}
- 
-.pronto-contenedor h3 {
-    font-size: 1.8rem;
-    color: #5d3a3a;
-    margin: 0 0 10px;
-}
- 
-.pronto-contenedor p {
-    font-size: 1.05rem;
-    color: #7c6a5e;
-    margin: 0;
-}
 
 /* SECCION SOBRE MI */
 
@@ -1536,6 +1109,10 @@ footer p {
     margin-bottom: 40px;
 }
 
+.tarot:has(article:nth-child(3)) {
+    grid-template-columns: 1fr;
+}
+
 .card-tarot img {
     width: 80%;
     max-width: 300px;
@@ -1635,19 +1212,12 @@ footer p {
     padding: 24px 12px;
 }
 
-/* RITUALES */
 .productos {
     padding: 0 12px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-.rituales {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
 }
 
 .productos article {
@@ -1666,210 +1236,6 @@ footer p {
 .productos p {
     font-size: 1rem;
 }
-
-.rituales-tabs {
-    gap: 8px;
-    margin-bottom: 24px;
-    padding: 0 8px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.tab-btn {
-    padding: 9px 16px;
-    font-size: 0.85rem;
-    gap: 6px;
-}
-
-.tab-icon {
-    font-size: 1rem;
-}
-
-/* TIENDA */
-.tienda-section {
-    padding: 28px 14px 50px;
-}
-
-.tienda-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 28px;
-}
-
-.tienda-header-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.tienda-section-title {
-    font-size: 1.7rem;
-}
-
-.btn-volver-tienda {
-    position: static;
-    transform: none;
-    padding: 7px 16px;
-    font-size: 1rem;
-}
-
-.btn-volver-tienda:hover {
-    transform: translateX(-3px);
-}
-
-.tienda-grid {
-    gap: 12px;
-}
-
-.categoria-card {
-    flex: 0 0 calc(50% - 6px);
-}
-
-.categoria-info {
-    padding: 10px 10px 14px;
-}
-
-.categoria-nombre {
-    font-size: 1.5rem;
-}
-
-.categoria-desc {
-    font-size: 0.90rem;
-}
-
-.cat-icono {
-    font-size: 2.4rem;
-}
-
-.productos-tienda-grid {
-    gap: 12px;
-}
-
-.producto-tienda-card {
-    flex: 0 0 calc(50% - 6px);
-}
-
-.producto-tienda-info {
-    padding: 12px 10px 14px;
-}
-
-.producto-tienda-nombre {
-    font-size: 1.2rem;
-}
-
-.producto-tienda-desc {
-    font-size: 1.1rem;
-}
-
-.btn-comprar-tienda {
-    padding: 8px 14px;
-    font-size: 0.82rem;
-}
-
-.pronto-contenedor {
-    padding: 50px 20px;
-}
-
-.pronto-icono {
-    font-size: 3.5rem;
-}
-
-.pronto-contenedor h3 {
-    font-size: 1.8rem;
-}
-
-.pronto-contenedor p {
-    font-size: 1.1rem;
-}
-
-/* --- RESPONSIVE TIENDA: móvil pequeño (≤ 480px) --- */
-@media (max-width: 480px) {
- 
-    .tienda-section {
-        padding: 20px 10px 36px;
-    }
- 
-    .tienda-section-title {
-        font-size: 1.3rem;
-    }
- 
-    .tienda-subtitle {
-        font-size: 0.88rem;
-    }
- 
-    .tienda-header-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 16px;
-    }
- 
-    .tienda-grid {
-        gap: 10px;
-    }
- 
-    .cat-icono {
-        font-size: 1.9rem;
-    }
- 
-    .categoria-nombre {
-        font-size: 1rem;
-    }
-
-    .categoria-desc {
-        display: none;
-    }
-
-    .btn-ver-todos {
-        font-size: 0.68rem;
-        padding: 5px 14px;
-        margin-top: 8px;
-    }
- 
-    /* Productos: una columna para dar espacio al texto */
-    .productos-tienda-grid {
-        gap: 12px;
-    }
-
-    .producto-tienda-card {
-        flex-basis: 100%;
-        max-width: none;
-    }
- 
-    .prod-icono {
-        font-size: 3rem;
-    }
- 
-    .producto-tienda-nombre {
-        font-size: 1rem;
-    }
- 
-    .producto-tienda-desc {
-        font-size: 0.90rem;
-    }
- 
-    .btn-comprar-tienda {
-        width: 100%;
-        text-align: center;
-        padding: 11px 0;
-    }
- 
-    .pronto-contenedor {
-        padding: 40px 16px;
-    }
- 
-    .pronto-icono {
-        font-size: 3rem;
-    }
- 
-    .pronto-contenedor h3 {
-        font-size: 1.8rem;
-    }
-
-
-
-
-
 
 /* SOBRE MI */
 .container-page-sobreMi .card-sobreMi {
